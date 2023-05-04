@@ -5,4 +5,6 @@ module com.example.proyectofinal {
 
     opens com.example.proyectofinal to javafx.fxml;
     exports com.example.proyectofinal;
+    exports com.example.proyectofinal.controller;
+    opens com.example.proyectofinal.controller to javafx.fxml;
 }
