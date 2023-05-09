@@ -2,6 +2,7 @@ package com.example.proyectofinal.model.dao;
 
 import com.example.proyectofinal.interfaces.DAO;
 import com.example.proyectofinal.model.domain.Product;
+import com.example.proyectofinal.model.domain.Users;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -20,7 +21,7 @@ public class PoductDAO implements DAO<Product> {
     }
 
     @Override
-    public Product dinfById(String id) throws SQLException {
+    public Product findById(String id) throws SQLException {
         return null;
     }
 
@@ -33,9 +34,13 @@ public class PoductDAO implements DAO<Product> {
     public void delete(Product entity) throws SQLException {
 
     }
-
+    public List<Product> findByAutor(Users entity) {
+        return null;
+    }
     @Override
     public void close() throws Exception {
 
     }
+
+
 }

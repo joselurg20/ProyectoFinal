@@ -1,7 +1,7 @@
 
-Q
-java:S3740"/Provide the parametrized type for this generic.(˜û°şüÿÿÿÿ8Ññ÷‚€1
-e
-java:S1128"IRemove this unused import 'com.example.proyectofinal.model.domain.Users'.(û¶8Å–Çƒ€1
-_
-java:S1128"=Remove this unused import 'javafx.scene.control.TableColumn'.(›¢øùÿÿÿÿ8Å–Çƒ€1
+p	java:S116"URename this field "btn_delete" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù€°f8Ôë€1
+o	java:S116"SRename this field "btn_save" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ˆ¢ø8Ôë€1
+
+java:S1186("€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(†Áõ8Ôë€1
+£
+java:S1186-"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(š©„™úÿÿÿÿ8Õë€1

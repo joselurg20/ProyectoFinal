@@ -1,13 +1,0 @@
-
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤¥Áö8àÀûÙş0
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤¥Áö8àÀûÙş0
-m	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë×Í8áÀûÙş0
-m	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü¤ê…8áÀûÙş0
-e
-java:S3518"CMake sure this expression can't be zero before doing this division.(é²“…ùÿÿÿÿ8éÀûÙş0
-w	java:S116"VRename this field "pais_origen" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÖšéúÿÿÿÿ8êÀûÙş0
-{	java:S116"ZRename this field "fecha_caducidad" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©®´¶ùÿÿÿÿ8êÀûÙş0
-o	java:S100+"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÚ£‘ÿÿÿÿÿ8îÀûÙş0
-j	java:S100/"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë×Í8îÀûÙş0
-o	java:S1003"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ö‹ãÀÿÿÿÿÿ8îÀûÙş0
-j	java:S1007"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü¤ê…8îÀûÙş0

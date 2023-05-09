@@ -2,6 +2,7 @@ package com.example.proyectofinal.model.dao;
 
 import com.example.proyectofinal.interfaces.DAO;
 import com.example.proyectofinal.model.connection.ConnectionMySQL;
+import com.example.proyectofinal.model.domain.Product;
 import com.example.proyectofinal.model.domain.Users;
 
 import java.sql.Connection;
@@ -45,7 +46,7 @@ public class UserDAO implements DAO<Users> {
     }
 
     @Override
-    public Users dinfById(String id) throws SQLException {
+    public Users findById(String id) throws SQLException {
         Users result = null;
         try(PreparedStatement pst=this.conn.prepareStatement(FINDBYID)){
             pst.setString(1, id);
@@ -62,7 +63,9 @@ public class UserDAO implements DAO<Users> {
 
     @Override
     public Users save(Users entity) throws SQLException {
-        return null;
+
+
+        return entity;
     }
 
     @Override
