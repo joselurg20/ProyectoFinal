@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.MercadoLibre">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #078C52;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.MercadoLibre">
    <children>
-      <Button fx:id="button" layoutX="250.0" layoutY="275.0" mnemonicParsing="false" onAction="#setButton" prefHeight="26.0" prefWidth="101.0" text="Log in" />
-      <Label layoutX="103.0" layoutY="70.0" prefHeight="178.0" prefWidth="396.0" text="Wellcome to Borough Market">
+      <Button fx:id="button" layoutX="237.0" layoutY="323.0" mnemonicParsing="false" onAction="#setButton" prefHeight="36.0" prefWidth="126.0" style="-fx-background-color: #E5D3B4;" text="Log in" textFill="#0d4a11">
          <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
+            <Font size="16.0" />
+         </font></Button>
+      <ImageView fitHeight="336.0" fitWidth="232.0" layoutX="184.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imgs/mercado.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
