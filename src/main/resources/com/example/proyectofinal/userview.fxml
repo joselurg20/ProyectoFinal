@@ -38,11 +38,11 @@
             <Button fx:id="btn_delete" mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #E5D3B4;" text="Delete" textFill="#0d4a11" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <TableView fx:id="llistUsers" layoutX="47.0" layoutY="88.0" prefHeight="358.0" prefWidth="375.0" style="-fx-background-color: #E5D3B4;">
+      <TableView fx:id="llistUsers" layoutX="14.0" layoutY="73.0" prefHeight="385.0" prefWidth="436.0" style="-fx-background-color: #E5D3B4;">
         <columns>
-          <TableColumn fx:id="columnDni" prefWidth="122.0" style="fx-color: grey;" text="Dni" />
-          <TableColumn fx:id="columnName" prefWidth="136.0" text="First Name" />
-            <TableColumn fx:id="columSecondName" prefWidth="116.0" text="Last Name" />
+          <TableColumn fx:id="columnDni" prefWidth="134.0" style="fx-color: grey;" text="Dni" />
+          <TableColumn fx:id="columnName" prefWidth="175.0" text="First Name" />
+            <TableColumn fx:id="columSecondName" prefWidth="126.0" text="Last Name" />
         </columns>
       </TableView>
    </children>

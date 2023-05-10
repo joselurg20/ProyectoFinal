@@ -21,7 +21,7 @@ public class Product {
         this.precio = precio;
     }
     public Product(){
-        this(0,"","", LocalDate.ofEpochDay(0/00/0000),0.0);
+        this(0,"","", LocalDate.parse("2023-05-10"),.0);
     }
 
     public int getId() {
