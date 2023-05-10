@@ -27,7 +27,5 @@ n
 >src/main/java/com/example/proyectofinal/model/dao/UserDAO.java,7\1\7138380658481d9df7a4ca566ec6b3957827da64
 p
 @src/main/java/com/example/proyectofinal/model/dao/PoductDAO.java,d\5\d55dd0745f362ae92e70c2b10d03a1971d69da67
-v
-Fsrc/main/java/com/example/proyectofinal/controller/UserController.java,5\2\52acfc8d320082265e9f3b12e966264d0c53f8aa
-k
-;src/main/java/com/example/proyectofinal/UserController.java,5\d\5dd2fc3c7a75ae0c632bac38296f1c6fed2ea1c7
+o
+?src/main/java/com/example/proyectofinal/model/domain/Users.java,f\0\f04c91a054ef341d131938be0f35839370d5a6b4
