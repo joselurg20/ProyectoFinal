@@ -58,7 +58,10 @@ public class Users {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(DNI, first_name, last_name, purchases);
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + (( DNI == null) ? 0 : DNI.hashCode());
+        return result;
     }
 
     @Override

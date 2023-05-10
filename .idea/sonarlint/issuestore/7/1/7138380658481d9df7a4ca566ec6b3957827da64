@@ -1,23 +1,23 @@
 
 Q
-java:S3740!"/Provide the parametrized type for this generic.(‘±ŠÖÿÿÿÿÿ8ÃêÔ€1
+java:S3740!"/Provide the parametrized type for this generic.(‘±ŠÖÿÿÿÿÿ8Ïí³§€1
+a
+java:S2259R"DA "NullPointerException" could be thrown; "entity" is nullable here.(ö…À8ßí³§€1
 £
-java:S1186H"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•‡÷îüÿÿÿÿ8ÊêÔ€1
+java:S1186]"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•‡÷îüÿÿÿÿ8áí³§€1
 
-java:S1186M"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(©éÑr8ÊêÔ€1
+java:S1186b"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(©éÑr8áí³§€1
 g
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ÅÚ™ÿÿÿÿÿ8ÌêÔ€1
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ÅÚ™ÿÿÿÿÿ8äí³§€1
 g
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¼¼ô¼üÿÿÿÿ8ÌêÔ€1
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¼¼ô¼üÿÿÿÿ8äí³§€1
 g
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(øà®ğøÿÿÿÿ8ÌêÔ€1
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(øà®ğøÿÿÿÿ8åí³§€1
 b
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ì“°8ÌêÔ€1
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ì“°8åí³§€1
 g
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(şªßÓÿÿÿÿÿ8ÌêÔ€1
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(şªßÓÿÿÿÿÿ8åí³§€1
+g
+java:S1128"KRemove this unused import 'com.example.proyectofinal.model.domain.Product'.(Àµ‘"8öí³§€1
 L
-java:S1068"*Remove this unused "INSERT" private field.(øà®ğøÿÿÿÿ8ÒêÔ€1
-G
-java:S1068"*Remove this unused "UPDATE" private field.(ì“°8ÓêÔ€1
-L
-java:S1068"*Remove this unused "DELETE" private field.(şªßÓÿÿÿÿÿ8ÓêÔ€1
+java:S1068"*Remove this unused "DELETE" private field.(şªßÓÿÿÿÿÿ8öí³§€1

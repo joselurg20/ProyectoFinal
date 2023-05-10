@@ -14,7 +14,7 @@ import java.util.List;
 
 public class UserDAO implements DAO<Users> {
     private final static String FINDALL = "select * from usuario";
-    private final static String FINDBYID = "select * from usuario where dni = ?";
+    private final static String FINDBYID ="select * from usuario where dni = ?";
     private final static String INSERT = "insert into usuario (dni,nombre,apellido) values (?,?,?)";
     private final static String UPDATE= "update usuario set nombre = ?, apellido= ? where dni= ?" ;
     private final static String DELETE = "delete from usuario where dni = ?" ;
@@ -46,10 +46,10 @@ public class UserDAO implements DAO<Users> {
     }
 
     @Override
-    public Users findById(String id) throws SQLException {
+    public Users findById(String dni) throws SQLException {
         Users result = null;
         try(PreparedStatement pst=this.conn.prepareStatement(FINDBYID)){
-            pst.setString(1, id);
+            pst.setString(1, dni);
             try(ResultSet res = pst.executeQuery()){
                 if(res.next()) {
                     result = new Users();
@@ -59,22 +59,43 @@ public class UserDAO implements DAO<Users> {
                 }
             }
         }
-        return result;    }
+        return result;
+    }
 
     @Override
     public Users save(Users entity) throws SQLException {
-
-
-        return entity;
+        Users result = new Users();
+        if (entity != null) {
+            Users u = findById(entity.getDNI());
+            if (u == null) {
+                //insertar
+                try (PreparedStatement pst = this.conn.prepareStatement(INSERT)) {
+                    pst.setString(1, entity.getDNI());
+                    pst.setString(2, entity.getFirst_name());
+                    pst.setString(3, entity.getLast_name());
+                    pst.executeUpdate();
+                }
+            }
+            //actualiza
+        } else {
+            try(PreparedStatement pst=this.conn.prepareStatement(UPDATE)) {
+                pst.setString(1, entity.getFirst_name());
+                pst.setString(2, entity.getLast_name());
+                pst.setString(3, entity.getDNI());
+                pst.executeUpdate();
+            }
+            result=entity;
+        }
+        return result;
     }
 
-    @Override
-    public void delete(Users entity) throws SQLException {
+        @Override
+        public void delete (Users entity) throws SQLException {
 
+        }
+
+        @Override
+        public void close () throws Exception {
+
+        }
     }
-
-    @Override
-    public void close() throws Exception {
-
-    }
-}

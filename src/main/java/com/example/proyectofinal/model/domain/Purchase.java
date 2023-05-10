@@ -69,5 +69,13 @@ public class Purchase {
                 && Objects.equals(p, other.p) && Objects.equals(u, other.u);
     }
 
-
+    @Override
+    public String toString() {
+        return "Purchase{" +
+                "u=" + u +
+                ", p=" + p +
+                ", cantidad=" + cantidad +
+                ", fecha_compra=" + fecha_compra +
+                '}';
+    }
 }
