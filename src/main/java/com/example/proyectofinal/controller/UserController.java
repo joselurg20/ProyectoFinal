@@ -1,8 +1,7 @@
 package com.example.proyectofinal.controller;
 
 import com.example.proyectofinal.model.dao.UserDAO;
-import com.example.proyectofinal.model.domain.Users;
-import javafx.beans.Observable;
+import com.example.proyectofinal.model.domain.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,11 +12,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-public class UserController{
+public class UserController {
     @FXML
     private Button btn_delete;
 
@@ -25,16 +23,16 @@ public class UserController{
     private Button btn_save;
 
     @FXML
-    private TableColumn<Users, String> columSecondName;
+    private TableColumn columSecondName;
 
     @FXML
-    private TableColumn<Users, String> columnDni;
+    private TableColumn columnDni;
 
     @FXML
-    private TableColumn<Users, String> columnName;
+    private TableColumn columnName;
 
     @FXML
-    private TableView<Users> llistUsers;
+    private TableView<User> llistUsers;
 
     @FXML
     private TextField txtDni;
@@ -45,34 +43,65 @@ public class UserController{
     @FXML
     private TextField txtSecondName;
     @FXML
-    private ObservableList <Users> users;
-    @FXML
-    void delete(ActionEvent event) {
+    private ObservableList<User> user;
+    UserDAO userDAO = new UserDAO();
 
-    }
-    @FXML
-    void save(ActionEvent event) {
+    public void initialize() throws SQLException{
 
-    }
-
-    UserDAO udao = new UserDAO();
-
-    public void inizialize() throws SQLException {
-
-        users = FXCollections.observableArrayList();
-        this.columnDni.setCellValueFactory(new PropertyValueFactory<>("dni"));
-        this.columnDni.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        this.columnDni.setCellValueFactory(new PropertyValueFactory<>("apellido"));
+        user = FXCollections.observableArrayList();
+        this.columnDni.setCellValueFactory(new PropertyValueFactory("Dni"));
+        this.columnName.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.columSecondName.setCellValueFactory(new PropertyValueFactory("Apellido"));
 
         generateTable();
+
+    }
+    @FXML
+    public void generateTable() throws SQLException{
+        List<User> aux = userDAO.findAll();
+        user.setAll(aux);
+        this.llistUsers.setItems(user);
     }
 
+    @FXML
+    void save(ActionEvent event) {
+        // Obtener los valores de los campos de texto
+        String dni = txtDni.getText();
+        String nombre = txtName.getText();
+        String apellido = txtSecondName.getText();
+
+        // Crear un nuevo objeto Users con los valores ingresados
+        User newUser = new User(dni, nombre, apellido);
+
+        try {
+            // Guardar el nuevo usuario en la base de datos
+            userDAO.save(newUser);
+            // Agregar el nuevo usuario a la lista observable
+            user.add(newUser);
+
+            // Limpiar los campos de texto
+            txtDni.clear();
+            txtName.clear();
+            txtSecondName.clear();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Manejar el error de la consulta SQL
+        }
+    }
 
     @FXML
-    public void generateTable() throws SQLException {
-        List<Users> aux = udao.findAll();
-        users.setAll(aux);
-
-        this.llistUsers.setItems(users);
+    void delete(ActionEvent event) {
+        User selectedUser = llistUsers.getSelectionModel().getSelectedItem();
+        if (selectedUser != null) {
+            try {
+                // Eliminar el usuario de la base de datos
+                userDAO.delete(selectedUser);
+                // Eliminar el usuario de la lista observable
+                user.remove(selectedUser);
+            } catch (SQLException e) {
+                e.printStackTrace();
+                // Manejar el error de la consulta SQL
+            }
+        }
     }
 }

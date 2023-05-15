@@ -1,11 +1,0 @@
-
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤¥Áö8¤¦Š©€1
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤¥Áö8³¦Š©€1
-m	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë×Í8Ã¦Š©€1
-m	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü¤ê…8Ò¦Š©€1
-w	java:S116"VRename this field "pais_origen" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÖšéúÿÿÿÿ8ğ¦Š©€1
-{	java:S116"ZRename this field "fecha_caducidad" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©®´¶ùÿÿÿÿ8€§Š©€1
-o	java:S100+"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÚ£‘ÿÿÿÿÿ8§Š©€1
-j	java:S100/"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë×Í8Ÿ§Š©€1
-o	java:S1003"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ö‹ãÀÿÿÿÿÿ8¯§Š©€1
-j	java:S1007"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü¤ê…8¾§Š©€1
