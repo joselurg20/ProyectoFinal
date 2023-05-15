@@ -4,12 +4,12 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class Purchase {
-    private Users u;
+    private User u;
     private Product p;
     private int cantidad;
     private LocalDate fecha_compra;
 
-    public Purchase(Users u, Product p, int cantidad, LocalDate fecha_compra) {
+    public Purchase(User u, Product p, int cantidad, LocalDate fecha_compra) {
         this.u = u;
         this.p = p;
         this.cantidad = cantidad;
@@ -20,11 +20,11 @@ public class Purchase {
     }
 
 
-    public Users getU() {
+    public User getU() {
         return u;
     }
 
-    public void setU(Users u) {
+    public void setU(User u) {
         this.u = u;
     }
 

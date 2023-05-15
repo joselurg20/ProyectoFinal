@@ -1,13 +1,15 @@
 module com.example.proyectofinal {
-    requires javafx.controls;
     requires javafx.fxml;
-    requires java.xml.bind;
+    requires javafx.controls;
     requires java.sql;
+    requires java.xml.bind;
 
-
-    opens com.example.proyectofinal to javafx.fxml;
-    exports com.example.proyectofinal;
-    exports com.example.proyectofinal.controller;
     opens com.example.proyectofinal.controller to javafx.fxml;
+    opens com.example.proyectofinal to java.xml.bind;
+    opens com.example.proyectofinal.model.connection to java.xml.bind;
+
+
+    opens com.example.proyectofinal.model.domain to javafx.base;
+    exports com.example.proyectofinal;
 
 }
