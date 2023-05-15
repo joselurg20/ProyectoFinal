@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #078C52;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.controller.ProductController">
+   <children>
+      <Label layoutX="211.0" layoutY="14.0" text="Lista de productos" textFill="#e5d3b4">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableProducts" layoutX="14.0" layoutY="59.0" prefHeight="322.0" prefWidth="474.0" style="-fx-background-color: e5d3b4;">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="43.0" text="Id" />
+          <TableColumn fx:id="col_nombre" prefWidth="104.0" text="Nombre" />
+            <TableColumn fx:id="col_pais" prefWidth="107.0" text="Pais de origen" />
+            <TableColumn fx:id="col_fecha" prefWidth="134.0" text="Fecha de caducidad" />
+            <TableColumn fx:id="col_precio" prefWidth="85.0" text="Precio" />
+        </columns>
+      </TableView>
+      <Button fx:id="back" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#setButton" style="-fx-background-color: #e5d3b4;" text="Volver" textFill="#078c52" />
+   </children>
+</AnchorPane>

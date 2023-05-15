@@ -20,8 +20,8 @@ public class Product {
         this.fecha_caducidad = fecha_caducidad;
         this.precio = precio;
     }
-    public Product(){
-        this(0,"","", LocalDate.parse("2023-05-10"),.0);
+    public Product() {
+        this(0,"", "", null,0.0);
     }
 
     public int getId() {

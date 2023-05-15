@@ -4,10 +4,10 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-@XmlRootElement (name = "connexion")
+@XmlRootElement (name = "conexion")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ConnexionData implements Serializable {
-    private static final long serialVersionUID=1L;
+    private static final long serialVersionUID = 1L;
     private String server;
     private String database;
     private String username;
