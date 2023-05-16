@@ -16,7 +16,7 @@ public class Purchase {
         this.fecha_compra = fecha_compra;
     }
     public Purchase(){
-        this(null, null, 0, LocalDate.MIN);
+        this(null, null, 0, null);
     }
 
 

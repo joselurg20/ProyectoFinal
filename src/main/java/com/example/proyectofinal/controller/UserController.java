@@ -1,5 +1,6 @@
 package com.example.proyectofinal.controller;
 
+import com.example.proyectofinal.App;
 import com.example.proyectofinal.model.dao.UserDAO;
 import com.example.proyectofinal.model.domain.User;
 import javafx.collections.FXCollections;
@@ -12,6 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -42,6 +44,8 @@ public class UserController {
 
     @FXML
     private TextField txtSecondName;
+    @FXML
+    private Button btn_compra;
     @FXML
     private ObservableList<User> user;
     UserDAO userDAO = new UserDAO();
@@ -104,4 +108,9 @@ public class UserController {
             }
         }
     }
+    @FXML
+    public void setCompra () throws IOException {
+        App.setRoot("listProduct");
+    }
+
 }

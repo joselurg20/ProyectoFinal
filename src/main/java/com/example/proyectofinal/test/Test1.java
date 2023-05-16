@@ -1,7 +1,9 @@
 package com.example.proyectofinal.test;
 
 import com.example.proyectofinal.model.dao.ProductDAO;
+import com.example.proyectofinal.model.dao.PurchaseDAO;
 import com.example.proyectofinal.model.domain.Product;
+import com.example.proyectofinal.model.domain.Purchase;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -27,7 +29,14 @@ public class Test1 {
             System.out.println(p);
 
         }
-
+/*
+        PurchaseDAO pudao = new PurchaseDAO();
+        List<Purchase> purchases = pudao.findAll();
+        for (Purchase pu : purchases
+        ) {
+            System.out.println(pu);
+        }
+*/
 
 
 
