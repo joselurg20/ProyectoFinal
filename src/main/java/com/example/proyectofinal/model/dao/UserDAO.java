@@ -1,9 +1,12 @@
 package com.example.proyectofinal.model.dao;
 
+import com.example.proyectofinal.App;
 import com.example.proyectofinal.interfaces.DAO;
 import com.example.proyectofinal.model.connection.ConnectionMySQL;
 import com.example.proyectofinal.model.domain.User;
+import javafx.fxml.FXML;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -91,11 +94,15 @@ public class UserDAO implements DAO<User> {
 
         @Override
         public void delete (User entity) throws SQLException {
-
+            try (PreparedStatement pst = this.conn.prepareStatement(DELETE)) {
+                pst.setString(1, entity.getDni()); // Suponiendo que el objeto User tiene un método getDni() que devuelve el DNI del usuario
+                pst.executeUpdate();
+            }
         }
 
         @Override
         public void close () throws Exception {
-
+            this.close();
         }
+
     }
