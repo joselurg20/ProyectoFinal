@@ -1,20 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.controller.PurchaseController">
+<AnchorPane prefHeight="405.0" prefWidth="537.0" style="-fx-background-color: #078C52;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.controller.PurchaseController">
    <children>
-      <TableView fx:id="ta_Purchase" layoutX="121.0" layoutY="100.0" prefHeight="200.0" prefWidth="359.0">
+      <Label layoutX="206.0" layoutY="24.0" text="Purchase List" textFill="#e5d3b4">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
+      <TextField fx:id="chos_pro" layoutX="182.0" layoutY="85.0" prefHeight="25.0" prefWidth="126.0" promptText="Choose the product" />
+      <TextField fx:id="chos_qua" layoutX="182.0" layoutY="135.0" prefHeight="25.0" prefWidth="126.0" promptText="Choose quantity" />
+      <Button fx:id="save" layoutX="387.0" layoutY="135.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: #e5d3b4;" text="Purchase" textFill="#0d4a11" />
+      <Label layoutX="14.0" layoutY="84.0" text="Choose the product " textFill="#e5d3b4">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="134.0" text="Choose the quantity" textFill="#e5d3b4">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TableView fx:id="ta_Purchase" layoutX="75.0" layoutY="185.0" prefHeight="206.0" prefWidth="394.0" style="-fx-background-color: #e5d3b4;">
         <columns>
           <TableColumn fx:id="col_dni" prefWidth="75.0" text="Dni" />
-          <TableColumn fx:id="col_id" prefWidth="75.0" text="ID Producto" />
+          <TableColumn fx:id="col_id" prefWidth="75.0" text="Producto" />
             <TableColumn fx:id="col_cantidad" prefWidth="75.0" text="Cantidad" />
-            <TableColumn fx:id="col_fecha" prefWidth="133.0" text="Fecha de la compra" />
+            <TableColumn fx:id="col_fecha" prefWidth="163.0" text="Fecha de Compra" />
         </columns>
       </TableView>
-      <Label layoutX="266.0" layoutY="50.0" text="Purchase List" />
    </children>
 </AnchorPane>

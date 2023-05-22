@@ -10,15 +10,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PurchaseDAO implements DAO<Purchase> {
-    private final static String FINDALL = "select * from producto";
-    private final static String FINDBYID = "select * form producto where id = ?";
-    private final static String INSERT = "insert into usuario (id_producto,nombre,pais_origen,fecha_caducidad, precio) values (?,?,?)";
-    private final static String UPDATE= "update usuario set nombre = ?, apellido= ? where id= ?" ;
-    private final static String DELETE = "delete from usuario where id = ?" ;
+    private final static String FINDALL = "select * from carrito";
+
+    private final static String INSERT = "INSERT INTO carrito (dni_usuario, id_producto, cantidad, fecha_compra) VALUES (?, ?, ?, ?)";
+    private final static String JOIN ="select u.nombre, p.nombre, c.cantidad, c.fecha_compra " +
+            "from usuario u " +
+            "join carrito c on u.dni = c.dni_usuario " +
+            "join producto p on p.id_producto = c.id_producto;";
 
     private Connection conn;
     public PurchaseDAO(Connection conn){
@@ -37,8 +40,10 @@ public class PurchaseDAO implements DAO<Purchase> {
                     Purchase pur = new Purchase();
                     UserDAO udao = new UserDAO(this.conn);
                     User u = udao.findById(res.getString("dni_usuario"));
+                    pur.setU(u);
                     ProductDAO pdao = new ProductDAO(this.conn);
                     Product p = pdao.findById(res.getString("id_producto"));
+                    pur.setP(p);
                     pur.setCantidad(res.getInt("cantidad"));
                     pur.setFecha_compra(res.getDate("fecha_compra").toLocalDate());
                     result.add(pur);
@@ -50,12 +55,20 @@ public class PurchaseDAO implements DAO<Purchase> {
 
     @Override
     public Purchase findById(String id) throws SQLException {
+
         return null;
     }
 
     @Override
     public Purchase save(Purchase entity) throws SQLException {
-        return null;
+        try (PreparedStatement pst = this.conn.prepareStatement(INSERT)) {
+            pst.setString(1, entity.getU().getDni());  // Assuming 'getDni()' returns the user's dni
+            pst.setInt(2, entity.getP().getId());  // Assuming 'getIdProducto()' returns the product's id
+            pst.setInt(3, entity.getCantidad());
+            pst.setDate(4, java.sql.Date.valueOf(entity.getFecha_compra()));
+            pst.executeUpdate();
+        }
+        return entity;
     }
 
     @Override
@@ -63,8 +76,9 @@ public class PurchaseDAO implements DAO<Purchase> {
 
     }
 
+
     @Override
     public void close() throws Exception {
-
+        close();
     }
 }

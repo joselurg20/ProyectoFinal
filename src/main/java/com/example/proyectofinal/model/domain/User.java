@@ -79,11 +79,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "Users{" +
-                "DNI='" + dni + '\'' +
-                ", first_name='" + nombre + '\'' +
-                ", last_name='" + apellido + '\'' +
-                ", purchases=" + purchases +
-                '}';
+        return  dni;
     }
 }

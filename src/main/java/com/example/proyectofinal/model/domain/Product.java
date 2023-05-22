@@ -100,13 +100,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", pais_origen='" + pais_origen + '\'' +
-                ", fecha_caducidad=" + fecha_caducidad +
-                ", precio=" + precio +
-                ", purchases=" + purchases +
-                '}';
+        return  nombre;
     }
 }
