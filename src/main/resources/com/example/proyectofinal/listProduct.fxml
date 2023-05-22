@@ -24,5 +24,6 @@
         </columns>
       </TableView>
       <Button fx:id="back" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#setButton" style="-fx-background-color: #e5d3b4;" text="Volver" textFill="#078c52" />
+      <Button fx:id="btn_purchse" layoutX="511.0" layoutY="220.0" mnemonicParsing="false" onAction="#btnPurchase" text="Button" />
    </children>
 </AnchorPane>

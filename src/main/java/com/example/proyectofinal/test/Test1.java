@@ -11,7 +11,7 @@ import java.util.List;
 public class Test1 {
     public static void main(String[] args) throws SQLException {
 
-       /* Users u = new Users("2","Alejandro","Espejo");
+       /*Users u = new Users("2","Alejandro","Espejo");
 
         UserDAO userDAO = new UserDAO();
          List<Users> users = userDAO.findAll();
@@ -22,21 +22,20 @@ public class Test1 {
 
         }
 
-        */ProductDAO pdao = new ProductDAO();
+        *//*ProductDAO pdao = new ProductDAO();
         List<Product> products = pdao.findAll();
         for (Product p : products
              ) {
             System.out.println(p);
 
         }
-/*
-        PurchaseDAO pudao = new PurchaseDAO();
+      */  PurchaseDAO pudao = new PurchaseDAO();
         List<Purchase> purchases = pudao.findAll();
         for (Purchase pu : purchases
         ) {
             System.out.println(pu);
         }
-*/
+
 
 
 

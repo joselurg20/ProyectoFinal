@@ -1,29 +1,13 @@
 
-E
-java:S3740!"/Provide the parametrized type for this generic.(™À˜×
-œ
-java:S1186="€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¤‹É¤ÿÿÿÿÿ
-–
-java:S1186D"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(©éÑr
-Z
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(²›éV
-[
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(àÏ®ß
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.( ÏâÕşÿÿÿÿ
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(£¡…Ãüÿÿÿÿ
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ßßáİşÿÿÿÿ
-C
-java:S1172@"-Remove this unused method parameter "entity".(Ÿ¶·æ
-A
-java:S1168A"+Return an empty collection instead of null.(¥¹ï
-B
-java:S1068",Remove this unused "FINDBYID" private field.(àÏ®ß
-E
-java:S1068"*Remove this unused "INSERT" private field.( ÏâÕşÿÿÿÿ
-E
-java:S1068"*Remove this unused "UPDATE" private field.(£¡…Ãüÿÿÿÿ
-E
-java:S1068"*Remove this unused "DELETE" private field.(ßßáİşÿÿÿÿ
+a
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(²›éV8‡ú“”„1
+g
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Â—Û€şÿÿÿÿ8ˆú“”„1
+b
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ÏŞòâ8ˆú“”„1
+J
+java:S1172\"-Remove this unused method parameter "entity".(Ÿ¶·æ8ú“”„1
+H
+java:S1168^"+Return an empty collection instead of null.(¥¹ï8ú“”„1
+G
+java:S1068"*Remove this unused "INSERT" private field.(ÏŞòâ8‘ú“”„1
