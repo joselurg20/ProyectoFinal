@@ -23,6 +23,10 @@ public class ConnectionMySQL{
             e.printStackTrace();
         }
     }
+    /**
+     * Obtiene una conexión a la base de datos MySQL.
+     * @return La conexión a la base de datos MySQL.
+     */
     public static Connection getConnect(){
         if (_newInstance== null){
             _newInstance= new ConnectionMySQL();

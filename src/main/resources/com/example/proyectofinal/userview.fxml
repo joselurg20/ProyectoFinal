@@ -34,7 +34,7 @@
             <TextField fx:id="txtName" promptText="First Name" style="-fx-background-color: #e6e6e6;" GridPane.rowIndex="1" />
             <TextField fx:id="txtDni" promptText="DNI" style="-fx-background-color: #e6e6e6;" />
             <TextField fx:id="txtSecondName" promptText="Last Name" style="-fx-background-color: #e6e6e6;" GridPane.rowIndex="2" />
-            <Button fx:id="btn_save" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #E5D3B4;" text="Save" textFill="#0d4a11" GridPane.rowIndex="3" />
+            <Button fx:id="btn_save" mnemonicParsing="false" onAction="#save" onDragDetected="#validateDNI" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #E5D3B4;" text="Save" textFill="#0d4a11" GridPane.rowIndex="3" />
             <Button fx:id="btn_delete" mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #E5D3B4;" text="Delete" textFill="#0d4a11" GridPane.rowIndex="4" />
          </children>
       </GridPane>
@@ -45,6 +45,6 @@
             <TableColumn fx:id="columSecondName" prefWidth="126.0" text="Last Name" />
         </columns>
       </TableView>
-      <Button fx:id="btn_compra" layoutX="475.0" layoutY="413.0" mnemonicParsing="false" onAction="#setCompra" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #E5D3B4;" text="Hacer Compra" textFill="#0d4a11" />
+      <Button fx:id="btn_compra" layoutX="475.0" layoutY="413.0" mnemonicParsing="false" onAction="#selectUsers" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #E5D3B4;" text="Hacer Compra" textFill="#0d4a11" />
    </children>
 </AnchorPane>

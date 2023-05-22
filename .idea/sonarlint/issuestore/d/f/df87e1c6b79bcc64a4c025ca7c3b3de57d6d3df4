@@ -1,0 +1,10 @@
+
+k
+java:S2095 "IUse try-with-resources or close this "PurchaseDAO" in a "finally" clause.(”Š—Äûÿÿÿÿ8 ò€œ„1
+]	java:S125"<This block of commented-out lines of code should be removed.(ŸÅ›Ýøÿÿÿÿ8£ò€œ„1
+]	java:S125"<This block of commented-out lines of code should be removed.(Ýõ˜ƒýÿÿÿÿ8£ò€œ„1
+Z	java:S106$"9Replace this use of System.out or System.err by a logger.(÷–Ú¹ùÿÿÿÿ8¥ò€œ„1
+m
+java:S1128"KRemove this unused import 'com.example.proyectofinal.model.dao.ProductDAO'.(Ÿð³ïýÿÿÿÿ8¥ò€œ„1
+g
+java:S1128"KRemove this unused import 'com.example.proyectofinal.model.domain.Product'.(Àµ‘"8¥ò€œ„1

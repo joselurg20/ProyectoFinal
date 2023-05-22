@@ -1,0 +1,34 @@
+
+K
+java:S3740"/Provide the parametrized type for this generic.(©İ48¶Ìº§„1
+Q
+java:S3740"/Provide the parametrized type for this generic.(ªŞÂëüÿÿÿÿ8·Ìº§„1
+L
+java:S3740 "/Provide the parametrized type for this generic.(ÇäÂ¤8·Ìº§„1
+L
+java:S3740#"/Provide the parametrized type for this generic.(¸ ¾î8·Ìº§„1
+Q
+java:S3740@"/Provide the parametrized type for this generic.(£ÌÚúÿÿÿÿ8·Ìº§„1
+L
+java:S3740A"/Provide the parametrized type for this generic.(Æ¿Áá8·Ìº§„1
+L
+java:S3740B"/Provide the parametrized type for this generic.(ÀöĞâ8·Ìº§„1
+Q
+java:S3740C"/Provide the parametrized type for this generic.(–ÇÛÏúÿÿÿÿ8·Ìº§„1
+g
+java:S2095e"EUse try-with-resources or close this "UserDAO" in a "finally" clause.(¿¥½°ıÿÿÿÿ8Á¨¿§„1
+j
+java:S2095_"HUse try-with-resources or close this "ProductDAO" in a "finally" clause.(ıçÚ´ÿÿÿÿÿ8Á¨¿§„1
+r	java:S116"WRename this field "col_cantidad" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©İ48ÄÌº§„1
+s	java:S116"RRename this field "col_dni" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªŞÂëüÿÿÿÿ8ÄÌº§„1
+p	java:S116 "TRename this field "col_fecha" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇäÂ¤8ÄÌº§„1
+m	java:S116#"QRename this field "col_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ ¾î8ÄÌº§„1
+r	java:S116&"VRename this field "ta_Purchase" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùßû½8ÄÌº§„1
+o	java:S116)"SRename this field "chos_pro" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù¯Ù8ÄÌº§„1
+s	java:S116+"RRename this field "chos_us" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ …ıÿÿÿÿ8ÄÌº§„1
+t	java:S116."SRename this field "chos_qua" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆôÈËúÿÿÿÿ8ÄÌº§„1
+U	java:S106r"9Replace this use of System.out or System.err by a logger.(¶·ÎÔ8Æ¨¿§„1
+Z	java:S106u"9Replace this use of System.out or System.err by a logger.(é±øáûÿÿÿÿ8Æ¨¿§„1
+Z	java:S106x"9Replace this use of System.out or System.err by a logger.(ı®ÃÕüÿÿÿÿ8Ç¨¿§„1
+U	java:S106z"9Replace this use of System.out or System.err by a logger.(æ†ªª8Ç¨¿§„1
+U	java:S106}"9Replace this use of System.out or System.err by a logger.(éÎ—8Ç¨¿§„1

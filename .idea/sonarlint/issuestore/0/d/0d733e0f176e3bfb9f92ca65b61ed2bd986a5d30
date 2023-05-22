@@ -5,9 +5,7 @@ g
 java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Â—Û€şÿÿÿÿ8ˆú“”„1
 b
 java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ÏŞòâ8ˆú“”„1
-J
-java:S1172\"-Remove this unused method parameter "entity".(Ÿ¶·æ8ú“”„1
-H
-java:S1168^"+Return an empty collection instead of null.(¥¹ï8ú“”„1
+j
+java:S1128"HRemove this unused import 'com.example.proyectofinal.model.domain.User'.(Á«€ ûÿÿÿÿ8•ŸË¥„1
 G
 java:S1068"*Remove this unused "INSERT" private field.(ÏŞòâ8‘ú“”„1

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="405.0" prefWidth="537.0" style="-fx-background-color: #078C52;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.controller.PurchaseController">
+<AnchorPane fx:id="btn_delete" onDragDetected="#delete" prefHeight="405.0" prefWidth="537.0" style="-fx-background-color: #078C52;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.controller.PurchaseController">
    <children>
       <Label layoutX="206.0" layoutY="24.0" text="Purchase List" textFill="#e5d3b4">
          <font>
@@ -16,8 +16,8 @@
          </font></Label>
       <TextField fx:id="chos_pro" layoutX="182.0" layoutY="85.0" prefHeight="25.0" prefWidth="126.0" promptText="Choose the product" />
       <TextField fx:id="chos_qua" layoutX="182.0" layoutY="135.0" prefHeight="25.0" prefWidth="126.0" promptText="Choose quantity" />
-      <Button fx:id="save" layoutX="387.0" layoutY="135.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: #e5d3b4;" text="Purchase" textFill="#0d4a11" />
-      <Label layoutX="14.0" layoutY="84.0" text="Choose the product " textFill="#e5d3b4">
+      <Button fx:id="save" layoutX="459.0" layoutY="245.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: #e5d3b4;" text="Purchase" textFill="#0d4a11" />
+      <Label layoutX="14.0" layoutY="84.0" prefHeight="26.0" prefWidth="161.0" text="Choose the product " textFill="#e5d3b4">
          <font>
             <Font size="17.0" />
          </font>
@@ -27,7 +27,7 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <TableView fx:id="ta_Purchase" layoutX="75.0" layoutY="185.0" prefHeight="206.0" prefWidth="394.0" style="-fx-background-color: #e5d3b4;">
+      <TableView fx:id="ta_Purchase" layoutX="48.0" layoutY="178.0" prefHeight="206.0" prefWidth="394.0" style="-fx-background-color: #e5d3b4;">
         <columns>
           <TableColumn fx:id="col_dni" prefWidth="75.0" text="Dni" />
           <TableColumn fx:id="col_id" prefWidth="75.0" text="Producto" />
@@ -35,5 +35,12 @@
             <TableColumn fx:id="col_fecha" prefWidth="163.0" text="Fecha de Compra" />
         </columns>
       </TableView>
+      <Label layoutX="342.0" layoutY="85.0" prefHeight="26.0" prefWidth="161.0" text="Choose the user" textFill="#e5d3b4">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="chos_us" layoutX="346.0" layoutY="122.0" prefHeight="25.0" prefWidth="126.0" promptText="Choose the user" />
+      <Button fx:id="delete" layoutX="459.0" layoutY="281.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #e5d3b4;" text="Delete" textFill="#0d4a11" />
    </children>
 </AnchorPane>

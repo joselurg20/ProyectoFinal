@@ -22,7 +22,6 @@ public class PurchaseDAO implements DAO<Purchase> {
             "from usuario u " +
             "join carrito c on u.dni = c.dni_usuario " +
             "join producto p on p.id_producto = c.id_producto;";
-
     private Connection conn;
     public PurchaseDAO(Connection conn){
         this.conn = conn;
@@ -31,6 +30,12 @@ public class PurchaseDAO implements DAO<Purchase> {
         this.conn = ConnectionMySQL.getConnect();
     }
 
+
+    /**
+     * Obtiene todas las compras del carrito.
+     * @return Una lista de compras.
+     * @throws SQLException Si ocurre algún error al ejecutar la consulta SQL.
+     */
     @Override
     public List<Purchase> findAll() throws SQLException {
         List<Purchase> result = new ArrayList();
@@ -55,10 +60,16 @@ public class PurchaseDAO implements DAO<Purchase> {
 
     @Override
     public Purchase findById(String id) throws SQLException {
-
+        // Método no implementado en el código proporcionado
         return null;
     }
 
+    /**
+     * Guarda una compra en el carrito.
+     * @param entity La compra a guardar.
+     * @return La compra guardada.
+     * @throws SQLException Si ocurre algún error al ejecutar la consulta SQL.
+     */
     @Override
     public Purchase save(Purchase entity) throws SQLException {
         try (PreparedStatement pst = this.conn.prepareStatement(INSERT)) {
@@ -71,14 +82,25 @@ public class PurchaseDAO implements DAO<Purchase> {
         return entity;
     }
 
-    @Override
-    public void delete(Purchase entity) throws SQLException {
+    /**
+     * Elimina una compra del carrito.
+     * @param entity La compra a eliminar.
+     * @throws SQLException Si ocurre algún error al ejecutar la consulta SQL.
+     */
+        @Override
+            public void delete(Purchase entity) throws SQLException {
+                String DELETE = "DELETE FROM carrito WHERE dni_usuario = ? AND id_producto = ?";
+                try (PreparedStatement pst = conn.prepareStatement(DELETE)) {
+                pst.setString(1, entity.getU().getDni());  // Assuming 'getDni()' returns the user's dni
+                pst.setInt(2, entity.getP().getId());  // Assuming 'getIdProducto()' returns the product's id
+                pst.executeUpdate();
+            }
+        }
 
-    }
 
 
     @Override
     public void close() throws Exception {
-        close();
+        conn.close();
     }
 }
