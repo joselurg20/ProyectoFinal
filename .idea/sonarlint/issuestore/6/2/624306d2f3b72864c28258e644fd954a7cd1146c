@@ -1,7 +1,7 @@
 
 f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ŠÛÉ
-k	java:S1173"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­‹ˆÚşÿÿÿÿ
+k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­‹ˆÚşÿÿÿÿ
 l	java:S116
 "WRename this field "fecha_compra" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É˜Ù
-h	java:S100/"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯¹ÙÃûÿÿÿÿ
-h	java:S1003"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­‹ˆÚşÿÿÿÿ
+h	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯¹ÙÃûÿÿÿÿ
+h	java:S1005"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­‹ˆÚşÿÿÿÿ

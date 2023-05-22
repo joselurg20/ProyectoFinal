@@ -109,17 +109,58 @@ public class UserController {
         }
     }
     @FXML
-    public void setCompra () throws IOException {
-        App.setRoot("listProduct");
-    }
-    @FXML
-    private User selectUsers(){
-        User resul = null;
-        User aux = this.llistUsers.getSelectionModel().getSelectedItem();
-        if (aux != null){
-            resul = aux;
+   void selectUsers(ActionEvent event){
+       User selectedUser = llistUsers.getSelectionModel().getSelectedItem();
+        if (selectedUser != null){
+            try {
+                App.setRoot("listProduct");
+            } catch (IOException e){
+                e.printStackTrace();
+            }
         }
-        return resul;
+   }
+
+    @FXML
+    void validateDNI(ActionEvent event) {
+        String dni = txtDni.getText();
+
+        // Verifica si el DNI es válido utilizando el método validarDNI
+        if (validarDNI(dni)) {
+            // El DNI es válido
+            // Realiza las acciones necesarias aquí
+            System.out.println("El DNI es válido.");
+        } else {
+            // El DNI no es válido
+            // Muestra un mensaje de error o realiza alguna acción adecuada
+            System.out.println("El DNI no es válido.");
+        }
     }
+
+    private boolean validarDNI(String dni) {
+        // Expresión regular para verificar el formato del DNI
+        String regex = "\\d{8}[A-HJ-NP-TV-Z]";
+
+        if (dni.matches(regex)) {
+            // Obtiene los dígitos del número de DNI
+            String digitos = dni.substring(0, 8);
+            // Obtiene el dígito verificador
+            char verificador = dni.charAt(8);
+
+            // Calcula el dígito verificador esperado
+            String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+            int posicion = Integer.parseInt(digitos) % 23;
+            char verificadorEsperado = letras.charAt(posicion);
+
+            // Compara el dígito verificador ingresado con el esperado
+            if (verificador == verificadorEsperado) {
+                return true; // El DNI es válido
+            }
+        }
+
+        return false; // El DNI no es válido
+    }
+
+
+
 
 }

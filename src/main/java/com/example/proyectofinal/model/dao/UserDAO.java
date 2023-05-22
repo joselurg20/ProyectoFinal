@@ -22,7 +22,6 @@ public class UserDAO implements DAO<User> {
 
     /**
      * Constructor de la clase UserDAO que recibe una conexión existente.
-     *
      * @param conn Conexión a la base de datos.
      */
     public UserDAO(Connection conn) {
@@ -35,7 +34,11 @@ public class UserDAO implements DAO<User> {
     public UserDAO() {
         this.conn = ConnectionMySQL.getConnect();
     }
-
+    /**
+     * Obtiene todos los usuarios de la base de datos.
+     * @return Una lista de usuarios.
+     * @throws SQLException Si ocurre algún error al ejecutar la consulta SQL.
+     */
     @Override
     public List<User> findAll() throws SQLException {
         List<User> result = new ArrayList<>();
@@ -55,7 +58,12 @@ public class UserDAO implements DAO<User> {
 
 
     }
-
+    /**
+     * Busca un usuario por su DNI.
+     * @param dni El DNI del usuario a buscar.
+     * @return El usuario encontrado, o null si no se encuentra ningún usuario con el DNI especificado.
+     * @throws SQLException Si ocurre algún error al ejecutar la consulta SQL.
+     */
     @Override
     public User findById(String dni) throws SQLException {
         User result = null;
@@ -72,7 +80,12 @@ public class UserDAO implements DAO<User> {
         }
         return result;
     }
-
+    /**
+     * Guarda un usuario en la base de datos.
+     * @param entity El usuario a guardar.
+     * @return El usuario guardado.
+     * @throws SQLException Si ocurre algún error al ejecutar la consulta SQL.
+     */
     @Override
     public User save(User entity) throws SQLException {
         User result = new User();
@@ -99,7 +112,11 @@ public class UserDAO implements DAO<User> {
         }
         return result;
     }
-
+    /**
+     * Elimina un usuario de la base de datos.
+     * @param entity El usuario a eliminar.
+     * @throws SQLException Si ocurre algún error al ejecutar la consulta SQL.
+     */
     @Override
     public void delete(User entity) throws SQLException {
         try (PreparedStatement pst = this.conn.prepareStatement(DELETE)) {
@@ -110,6 +127,6 @@ public class UserDAO implements DAO<User> {
 
     @Override
     public void close() throws Exception {
-        // Método close() no implement
+        conn.close();
     }
 }

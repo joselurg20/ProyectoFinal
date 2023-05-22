@@ -20,6 +20,8 @@ public class Purchase {
     }
 
 
+
+
     public User getU() {
         return u;
     }

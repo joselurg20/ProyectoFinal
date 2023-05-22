@@ -89,13 +89,9 @@ public class ProductDAO implements DAO<Product> {
         // Método no implementado en el código proporcionado
     }
 
-    public List<Product> findByAutor(User entity) {
-        // Método sin implementar en el código proporcionado. No se utiliza ni se menciona en otras partes del código.
-        return null;
-    }
 
     @Override
     public void close() throws Exception {
-        // Método close() no implementado en el código proporcionado
+        conn.close();
     }
 }
