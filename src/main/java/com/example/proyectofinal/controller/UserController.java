@@ -112,5 +112,14 @@ public class UserController {
     public void setCompra () throws IOException {
         App.setRoot("listProduct");
     }
+    @FXML
+    private User selectUsers(){
+        User resul = null;
+        User aux = this.llistUsers.getSelectionModel().getSelectedItem();
+        if (aux != null){
+            resul = aux;
+        }
+        return resul;
+    }
 
 }

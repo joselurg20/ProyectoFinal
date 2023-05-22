@@ -37,6 +37,9 @@ public class ProductController {
     @FXML
     private Button back;
 
+    @FXML
+    private Button btn_purchse;
+
 
     private ObservableList<Product> product;
     ProductDAO productDAO = new ProductDAO();
@@ -63,5 +66,10 @@ public class ProductController {
     @FXML
     public void setButton () throws IOException {
         App.setRoot("userview");
+    }
+
+    @FXML
+    public void btnPurchase () throws IOException{
+        App.setRoot("viewPurchase");
     }
 }

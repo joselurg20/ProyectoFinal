@@ -10,6 +10,10 @@ public class MercadoLibre {
     @FXML
     public Button button;
 
+    /**
+     * pagina principal y solo sirve para mostrar una vista
+     * @throws IOException
+     */
     @FXML
     public void setButton () throws IOException{
         App.setRoot("userview");
