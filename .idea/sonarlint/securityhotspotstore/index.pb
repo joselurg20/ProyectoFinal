@@ -5,8 +5,6 @@ n
 >src/main/java/com/example/proyectofinal/model/domain/User.java,b\5\b589230955b9cd5fdce04d527fa0e7bf1419979a
 r
 Bsrc/main/java/com/example/proyectofinal/model/domain/Purchase.java,6\2\624306d2f3b72864c28258e644fd954a7cd1146c
-y
-Isrc/main/java/com/example/proyectofinal/controller/ProductController.java,f\4\f453f5465f93bbc3d5f2a4abbc3077d39b5f8c7d
 z
 Jsrc/main/java/com/example/proyectofinal/controller/PurchaseController.java,e\a\ea159831a413253c9978373aec7661aca3685342
 v
