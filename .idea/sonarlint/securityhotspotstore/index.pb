@@ -1,8 +1,6 @@
 
 N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
-y
-Isrc/main/java/com/example/proyectofinal/controller/ProductController.java,f\4\f453f5465f93bbc3d5f2a4abbc3077d39b5f8c7d
 r
 Bsrc/main/java/com/example/proyectofinal/model/domain/Purchase.java,6\2\624306d2f3b72864c28258e644fd954a7cd1146c
 q
@@ -15,8 +13,6 @@ v
 Fsrc/main/java/com/example/proyectofinal/utils/SerializadorManager.java,3\3\333592afcfcda755c61dd12399c6939efa9811f6
 `
 0src/main/java/com/example/proyectofinal/App.java,4\d\4d976d2380863669d0f78eac28f7a07ec710d93d
-r
-Bsrc/main/java/com/example/proyectofinal/model/dao/PurchaseDAO.java,6\d\6d704dfe5b051b43f9a1ab1abfbb7cd43ad92eef
 <
 conexion.xml,c\e\cea450a916b0aacd653f63795bba766a27f71026
 {

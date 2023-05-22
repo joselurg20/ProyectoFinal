@@ -1,8 +1,6 @@
 
 N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
-y
-Isrc/main/java/com/example/proyectofinal/controller/ProductController.java,f\4\f453f5465f93bbc3d5f2a4abbc3077d39b5f8c7d
 q
 Asrc/main/java/com/example/proyectofinal/model/dao/ProductDAO.java,0\d\0d733e0f176e3bfb9f92ca65b61ed2bd986a5d30
 `
@@ -15,8 +13,6 @@ r
 Bsrc/main/java/com/example/proyectofinal/model/domain/Purchase.java,6\2\624306d2f3b72864c28258e644fd954a7cd1146c
 i
 9src/main/java/com/example/proyectofinal/MercadoLibre.java,6\9\69136c2153692a30216107ee95f71fb53b3c35d7
-r
-Bsrc/main/java/com/example/proyectofinal/model/dao/PurchaseDAO.java,6\d\6d704dfe5b051b43f9a1ab1abfbb7cd43ad92eef
 <
 conexion.xml,c\e\cea450a916b0aacd653f63795bba766a27f71026
 {

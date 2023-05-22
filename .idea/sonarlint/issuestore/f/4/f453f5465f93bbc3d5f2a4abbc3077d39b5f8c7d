@@ -1,26 +1,0 @@
-
-E
-java:S3740"/Provide the parametrized type for this generic.(ÇäÂ¤
-E
-java:S3740"/Provide the parametrized type for this generic.(¸ ¾î
-J
-java:S3740"/Provide the parametrized type for this generic.(§±‹úøÿÿÿÿ
-J
-java:S3740"/Provide the parametrized type for this generic.(¥Æâ™øÿÿÿÿ
-E
-java:S3740 "/Provide the parametrized type for this generic.(Ã÷ô¼
-J
-java:S37400"/Provide the parametrized type for this generic.(²ÊÇ£üÿÿÿÿ
-J
-java:S37401"/Provide the parametrized type for this generic.(Ú÷Ð¤úÿÿÿÿ
-J
-java:S37402"/Provide the parametrized type for this generic.(ü¡£Éùÿÿÿÿ
-E
-java:S37403"/Provide the parametrized type for this generic.(û¼†©
-E
-java:S37404"/Provide the parametrized type for this generic.(ãõð³
-i	java:S116"TRename this field "col_fecha" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇäÂ¤
-f	java:S116"QRename this field "col_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ ¾î
-o	java:S116"URename this field "col_nombre" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§±‹úøÿÿÿÿ
-m	java:S116"SRename this field "col_pais" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥Æâ™øÿÿÿÿ
-j	java:S116 "URename this field "col_precio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã÷ô¼
