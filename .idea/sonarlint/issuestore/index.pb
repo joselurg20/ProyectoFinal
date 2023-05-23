@@ -23,3 +23,11 @@ n
 >src/main/java/com/example/proyectofinal/model/dao/UserDAO.java,7\1\7138380658481d9df7a4ca566ec6b3957827da64
 i
 9src/main/java/com/example/proyectofinal/MercadoLibre.java,6\9\69136c2153692a30216107ee95f71fb53b3c35d7
+y
+Isrc/main/java/com/example/proyectofinal/controller/ProductController.java,f\4\f453f5465f93bbc3d5f2a4abbc3077d39b5f8c7d
+`
+0src/main/java/com/example/proyectofinal/App.java,4\d\4d976d2380863669d0f78eac28f7a07ec710d93d
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
