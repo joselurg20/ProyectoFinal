@@ -25,6 +25,9 @@ public class UserController {
     private Button btn_save;
 
     @FXML
+    private Button update;
+
+    @FXML
     private TableColumn columSecondName;
 
     @FXML
@@ -92,6 +95,38 @@ public class UserController {
             // Manejar el error de la consulta SQL
         }
     }
+
+    @FXML
+    void update(ActionEvent event) {
+        User selectedUser = llistUsers.getSelectionModel().getSelectedItem();
+        if (selectedUser != null) {
+            // Obtener los nuevos valores de los campos de texto
+            String dni = txtDni.getText();
+            String nombre = txtName.getText();
+            String apellido = txtSecondName.getText();
+
+            // Crear un nuevo objeto User con los valores actualizados
+            User updatedUser = new User(dni, nombre, apellido);
+
+            try {
+                // Actualizar el usuario en la base de datos
+                userDAO.update(updatedUser);
+
+                // Actualizar el usuario en la lista observable
+                int index = user.indexOf(selectedUser);
+                user.set(index, updatedUser);
+
+                // Limpiar los campos de texto
+                txtDni.clear();
+                txtName.clear();
+                txtSecondName.clear();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                // Manejar el error de la consulta SQL
+            }
+        }
+    }
+
 
     @FXML
     void delete(ActionEvent event) {
