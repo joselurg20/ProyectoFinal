@@ -17,6 +17,11 @@ k
 ;src/main/java/com/example/proyectofinal/interfaces/DAO.java,f\7\f769c21165a4e6ecac3ced1e970f21af28f365ba
 q
 Asrc/main/java/com/example/proyectofinal/model/domain/Product.java,b\5\b54f248a0add8f02bf0ab801c4751ee15a69b949
+sonarlink
+i
+9src/main/java/com/example/proyectofinal/MercadoLibre.java,6\9\69136c2153692a30216107ee95f71fb53b3c35d7
+
+ main
 y
 Isrc/main/java/com/example/proyectofinal/controller/ProductController.java,f\4\f453f5465f93bbc3d5f2a4abbc3077d39b5f8c7d
 7

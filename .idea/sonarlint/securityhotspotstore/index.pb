@@ -17,6 +17,10 @@ q
 Asrc/main/java/com/example/proyectofinal/model/dao/ProductDAO.java,0\d\0d733e0f176e3bfb9f92ca65b61ed2bd986a5d30
 q
 Asrc/main/java/com/example/proyectofinal/model/domain/Product.java,b\5\b54f248a0add8f02bf0ab801c4751ee15a69b949
+sonarlink
+i
+9src/main/java/com/example/proyectofinal/MercadoLibre.java,6\9\69136c2153692a30216107ee95f71fb53b3c35d7
+ main
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 y
