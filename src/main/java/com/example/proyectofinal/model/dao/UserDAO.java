@@ -99,15 +99,6 @@ public class UserDAO implements DAO<User> {
                     pst.setString(3, entity.getApellido());
                     pst.executeUpdate();
                 }
-            } else {
-                // Actualizar usuario existente
-                try (PreparedStatement pst = this.conn.prepareStatement(UPDATE)) {
-                    pst.setString(1, entity.getNombre());
-                    pst.setString(2, entity.getApellido());
-                    pst.setString(3, entity.getDni());
-                    pst.executeUpdate();
-                }
-                result = entity;
             }
         }
         return result;
@@ -128,5 +119,23 @@ public class UserDAO implements DAO<User> {
     @Override
     public void close() throws Exception {
         conn.close();
+    }
+
+    public void update(User entity) throws SQLException {
+        User result = new User();
+        if (entity != null) {
+            User u = findById(entity.getDni());
+            if (u == null) {
+                // Actualizar usuario existente
+                try (PreparedStatement pst = this.conn.prepareStatement(UPDATE)) {
+                    pst.setString(1, entity.getNombre());
+                    pst.setString(2, entity.getApellido());
+                    pst.setString(3, entity.getDni());
+                    pst.executeUpdate();
+                }
+                result = entity;
+            }
+
+        }
     }
 }

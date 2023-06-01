@@ -7,8 +7,6 @@ r
 Bsrc/main/java/com/example/proyectofinal/model/domain/Purchase.java,6\2\624306d2f3b72864c28258e644fd954a7cd1146c
 z
 Jsrc/main/java/com/example/proyectofinal/controller/PurchaseController.java,e\a\ea159831a413253c9978373aec7661aca3685342
-v
-Fsrc/main/java/com/example/proyectofinal/controller/UserController.java,5\2\52acfc8d320082265e9f3b12e966264d0c53f8aa
 k
 ;src/main/java/com/example/proyectofinal/interfaces/DAO.java,f\7\f769c21165a4e6ecac3ced1e970f21af28f365ba
 }
@@ -19,15 +17,9 @@ q
 Asrc/main/java/com/example/proyectofinal/model/dao/ProductDAO.java,0\d\0d733e0f176e3bfb9f92ca65b61ed2bd986a5d30
 q
 Asrc/main/java/com/example/proyectofinal/model/domain/Product.java,b\5\b54f248a0add8f02bf0ab801c4751ee15a69b949
-i
-9src/main/java/com/example/proyectofinal/MercadoLibre.java,6\9\69136c2153692a30216107ee95f71fb53b3c35d7
-n
->src/main/java/com/example/proyectofinal/model/dao/UserDAO.java,7\1\7138380658481d9df7a4ca566ec6b3957827da64
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 y
 Isrc/main/java/com/example/proyectofinal/controller/ProductController.java,f\4\f453f5465f93bbc3d5f2a4abbc3077d39b5f8c7d
-`
-0src/main/java/com/example/proyectofinal/App.java,4\d\4d976d2380863669d0f78eac28f7a07ec710d93d
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
