@@ -28,7 +28,6 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <TextField />
@@ -37,7 +36,6 @@
             <TextField fx:id="txtSecondName" promptText="Last Name" style="-fx-background-color: #e6e6e6;" GridPane.rowIndex="2" />
             <Button fx:id="btn_save" mnemonicParsing="false" onAction="#save" onDragDetected="#validateDNI" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #E5D3B4;" text="Save" textFill="#0d4a11" GridPane.rowIndex="3" />
             <Button fx:id="btn_delete" mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #E5D3B4;" text="Delete" textFill="#0d4a11" GridPane.rowIndex="4" />
-            <Button fx:id="update" mnemonicParsing="false" onAction="#update" onDragDetected="#validateDNI" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #E5D3B4;" text="Update" textFill="#0d4a11" GridPane.rowIndex="5" />
          </children>
       </GridPane>
       <TableView fx:id="llistUsers" layoutX="14.0" layoutY="56.0" prefHeight="407.0" prefWidth="436.0" style="-fx-background-color: #E5D3B4;">

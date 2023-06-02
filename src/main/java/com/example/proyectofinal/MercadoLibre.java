@@ -2,13 +2,26 @@ package com.example.proyectofinal;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 
 import java.io.IOException;
 
 public class MercadoLibre {
+    @FXML
+    private Label labelUser;
 
     @FXML
-    public Button button;
+    private Button btn_home;
+
+    @FXML
+    private PasswordField passField;
+
+    @FXML
+    private TextField userField;
+
 
     /**
      * pagina principal y solo sirve para mostrar una vista
@@ -16,6 +29,13 @@ public class MercadoLibre {
      */
     @FXML
     public void setButton () throws IOException{
-        App.setRoot("userview");
+        if (userField.getText().equals("admin") && passField.getText().equals("admin")){
+            labelUser.setText("Correct user and password!");
+            labelUser.setTextFill(Color.GREEN);
+            App.setRoot("userview");
+        }else {
+            labelUser.setText("Wrong username or password!");
+            labelUser.setTextFill(Color.RED);
+        }
     }
 }
