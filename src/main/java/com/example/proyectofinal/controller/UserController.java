@@ -23,7 +23,8 @@ public class UserController {
 
     @FXML
     private Button btn_save;
-
+    @FXML
+    private Button btn_compra;
     @FXML
     private TableColumn columSecondName;
 
@@ -45,8 +46,6 @@ public class UserController {
     @FXML
     private TextField txtSecondName;
     @FXML
-    private Button btn_compra;
-    @FXML
     private ObservableList<User> user;
     UserDAO userDAO = new UserDAO();
 
@@ -66,7 +65,6 @@ public class UserController {
         user.setAll(aux);
         this.llistUsers.setItems(user);
     }
-
     @FXML
     void save(ActionEvent event) {
         // Obtener los valores de los campos de texto
@@ -74,25 +72,35 @@ public class UserController {
         String nombre = txtName.getText();
         String apellido = txtSecondName.getText();
 
-        // Crear un nuevo objeto Users con los valores ingresados
-        User newUser = new User(dni, nombre, apellido);
-
         try {
-            // Guardar el nuevo usuario en la base de datos
-            userDAO.save(newUser);
-            // Agregar el nuevo usuario a la lista observable
-            user.add(newUser);
+            if (!userDAO.existsUser(dni)) {
+                // El usuario no existe en la base de datos, crear uno nuevo
+                User newUser = new User(dni, nombre, apellido);
+                // Guardar el nuevo usuario en la base de datos
+                userDAO.save(newUser);
+
+                // Agregar el nuevo usuario a la lista observable
+                user.add(newUser);
+            } else {
+                // El usuario ya existe en la base de datos, actualizar nombre y apellido
+                User existingUser = userDAO.findById(dni);
+                existingUser.setNombre(nombre);
+                existingUser.setApellido(apellido);
+                // Actualizar el usuario en la base de datos
+                userDAO.save(existingUser);
+            }
 
             // Limpiar los campos de texto
             txtDni.clear();
             txtName.clear();
             txtSecondName.clear();
+
+            generateTable();
         } catch (SQLException e) {
             e.printStackTrace();
             // Manejar el error de la consulta SQL
         }
     }
-
     @FXML
     void delete(ActionEvent event) {
         User selectedUser = llistUsers.getSelectionModel().getSelectedItem();
