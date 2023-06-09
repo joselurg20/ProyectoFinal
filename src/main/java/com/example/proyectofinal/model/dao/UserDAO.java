@@ -3,6 +3,7 @@ package com.example.proyectofinal.model.dao;
 import com.example.proyectofinal.App;
 import com.example.proyectofinal.interfaces.DAO;
 import com.example.proyectofinal.model.connection.ConnectionMySQL;
+import com.example.proyectofinal.model.domain.Product;
 import com.example.proyectofinal.model.domain.User;
 import javafx.fxml.FXML;
 
@@ -77,19 +78,18 @@ public class UserDAO implements DAO<User> {
                     pst.setString(3, entity.getApellido());
                     pst.executeUpdate();
                 }
-                result = entity;
-            } else {
-                // Actualizar usuario existente
-                try (PreparedStatement pst = this.conn.prepareStatement(UPDATE)) {
-                    pst.setString(1, entity.getNombre());
-                    pst.setString(2, entity.getApellido());
-                    pst.setString(3, entity.getDni());
-                    pst.executeUpdate();
-                }
-                result = entity;
             }
         }
         return result;
+    }
+
+    public void update(User entity) throws SQLException {
+        try (PreparedStatement pst = this.conn.prepareStatement(UPDATE)) {
+            pst.setString(1, entity.getNombre());
+            pst.setString(2, entity.getApellido());
+            pst.setString(3, entity.getDni());
+            pst.executeUpdate();
+        }
     }
 
     @Override

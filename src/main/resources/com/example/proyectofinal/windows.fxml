@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #078C52;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.controller.Windows">
+   <children>
+      <Button fx:id="vr_products" layoutX="328.0" layoutY="398.0" mnemonicParsing="false" onAction="#setProducts" style="-fx-background-color: #e5d3b4;" text="Ver Productos" textFill="#078c52">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="vr_users" layoutX="885.0" layoutY="398.0" mnemonicParsing="false" onAction="#setUsers" style="-fx-background-color: #e5d3b4;" text="Elegir Usuario" textFill="#078c52">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="logOut" layoutX="653.0" layoutY="620.0" mnemonicParsing="false" onAction="#setLogOut" style="-fx-background-color: #e5d3b4;" text="Log out" textFill="#078c52">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Button>
+      <Label layoutX="555.0" layoutY="230.0" text="Que quieres hacer?" textFill="#e5d3b4">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

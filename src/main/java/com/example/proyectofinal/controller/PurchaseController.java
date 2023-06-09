@@ -10,10 +10,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.SQLException;
@@ -36,22 +33,18 @@ public class PurchaseController {
 
     @FXML
     private TableView<Purchase> ta_Purchase;
-
     @FXML
-    private TextField chos_pro;
+    private ComboBox<User> chooser;
     @FXML
-    private TextField chos_us;
-
-    @FXML
-    private TextField chos_qua;
+    private ComboBox<Product> chspro;
 
     @FXML
     private Button save;
     @FXML
     private Button delete;
-
-
-    private ObservableList<Purchase> purchase;
+    @FXML
+    private Spinner<Integer> cant;
+    private ObservableList<Purchase> purchase  = FXCollections.observableArrayList();
 
     PurchaseDAO purchaseDAO = new PurchaseDAO();
     /**
@@ -59,13 +52,29 @@ public class PurchaseController {
      * @throws SQLException
      */
 
-    public void initialize() throws SQLException{
+    public void initialize() throws SQLException {
         purchase = FXCollections.observableArrayList();
         this.col_dni.setCellValueFactory(new PropertyValueFactory("u"));
         this.col_id.setCellValueFactory(new PropertyValueFactory("p"));
         this.col_cantidad.setCellValueFactory(new PropertyValueFactory("cantidad"));
         this.col_fecha.setCellValueFactory(new PropertyValueFactory("fecha_compra"));
         generateTable();
+        UserDAO userDAO = new UserDAO();
+        List<User> usuarios = userDAO.findAll();
+        chooser.setItems(FXCollections.observableArrayList(usuarios));
+
+        ProductDAO productDAO = new ProductDAO();
+        List<Product> products = productDAO.findAll();
+        chspro.setItems(FXCollections.observableArrayList(products));
+
+
+        SpinnerValueFactory<Integer> valueFactory =
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10);
+
+        valueFactory.setValue(1);
+        cant.setValueFactory(valueFactory);
+
+
     }
     /**
      * te muestra el Array de comprar de la base de datos
@@ -76,6 +85,8 @@ public class PurchaseController {
         purchase.setAll(aux);
         this.ta_Purchase.setItems(purchase);
     }
+
+
     /**
      * boton o accion para el boton que guarda y mete al compra
      * @param event
@@ -83,46 +94,31 @@ public class PurchaseController {
 
     @FXML
     void save(ActionEvent event) {
-        String strId = chos_pro.getText();
-        String strCantidad = chos_qua.getText();
+        Product productoSeleccionado = chspro.getValue();
+        int cantidad = cant.getValue();
 
-        if (!strId.isEmpty() && !strCantidad.isEmpty()) {
+        if (productoSeleccionado != null) {
             try {
-                int id = Integer.parseInt(strId);
-                int cantidad = Integer.parseInt(strCantidad);
+                // Obtén el usuario seleccionado del ComboBox
+                User usuarioSeleccionado = chooser.getSelectionModel().getSelectedItem();
 
-                // Obtén el producto seleccionado de la base de datos utilizando el ID
-                ProductDAO productDAO = new ProductDAO();
-                Product productoSeleccionado = productDAO.findById(String.valueOf(id));
+                if (usuarioSeleccionado != null) {
+                    // Crea una instancia de la clase Purchase con los valores proporcionados
+                    Purchase compra = new Purchase(usuarioSeleccionado, productoSeleccionado, cantidad, LocalDate.now());
 
-                if (productoSeleccionado != null) {
-                    // Obtén el usuario de la base de datos utilizando el DNI
-                    String dni = "12345678"; // Aquí debes obtener el DNI del usuario de alguna manera
-                    UserDAO userDAO = new UserDAO();
-                    User usuario = userDAO.findById(dni);
+                    // Guarda la compra en la base de datos
+                    purchaseDAO.save(compra);
 
-                    if (usuario != null) {
-                        // Crea una instancia de la clase Purchase con los valores proporcionados
-                        Purchase compra = new Purchase(usuario, productoSeleccionado, cantidad, LocalDate.now());
-
-                        // Guarda la compra en la base de datos
-                        purchaseDAO.save(compra);
-
-                        // Actualiza la tabla de compras
-                        generateTable();
-                    } else {
-                        System.out.println("No se encontró un usuario con el DNI especificado.");
-                    }
+                    // Actualiza la tabla de compras
+                    generateTable();
                 } else {
-                    System.out.println("No se encontró un producto con el ID especificado.");
+                    System.out.println("No se ha seleccionado ningún usuario.");
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("El ID o la cantidad no son números válidos.");
             } catch (SQLException e) {
                 System.out.println("Error al guardar la compra en la base de datos: " + e.getMessage());
             }
         } else {
-            System.out.println("El ID o la cantidad están vacíos.");
+            System.out.println("No se ha seleccionado ningún producto.");
         }
     }
 
@@ -142,6 +138,7 @@ public class PurchaseController {
             }
         }
     }
+
 
 
 

@@ -1,27 +1,42 @@
 
 L
-java:S3740"/Provide the parametrized type for this generic.(ÇäÂ¤8Å‹Å§„1
+java:S3740"/Provide the parametrized type for this generic.(ÇäÂ¤8ˆĞıÕ‰1
 L
-java:S3740"/Provide the parametrized type for this generic.(¸ ¾î8Å‹Å§„1
+java:S3740"/Provide the parametrized type for this generic.(¸ ¾î8‰ĞıÕ‰1
 Q
-java:S3740"/Provide the parametrized type for this generic.(§±‹úøÿÿÿÿ8Å‹Å§„1
+java:S3740"/Provide the parametrized type for this generic.(§±‹úøÿÿÿÿ8‰ĞıÕ‰1
 Q
-java:S3740"/Provide the parametrized type for this generic.(¥Æâ™øÿÿÿÿ8Å‹Å§„1
+java:S3740""/Provide the parametrized type for this generic.(¥Æâ™øÿÿÿÿ8‰ĞıÕ‰1
 L
-java:S3740 "/Provide the parametrized type for this generic.(Ã÷ô¼8Å‹Å§„1
+java:S3740%"/Provide the parametrized type for this generic.(Ã÷ô¼8‰ĞıÕ‰1
 Q
-java:S37406"/Provide the parametrized type for this generic.(²ÊÇ£üÿÿÿÿ8Å‹Å§„1
+java:S3740S"/Provide the parametrized type for this generic.(²ÊÇ£üÿÿÿÿ8‰ĞıÕ‰1
 Q
-java:S37407"/Provide the parametrized type for this generic.(Ú÷Ğ¤úÿÿÿÿ8Å‹Å§„1
+java:S3740T"/Provide the parametrized type for this generic.(Ú÷Ğ¤úÿÿÿÿ8‰ĞıÕ‰1
 Q
-java:S37408"/Provide the parametrized type for this generic.(ü¡£Éùÿÿÿÿ8Å‹Å§„1
+java:S3740U"/Provide the parametrized type for this generic.(ü¡£Éùÿÿÿÿ8‰ĞıÕ‰1
 L
-java:S37409"/Provide the parametrized type for this generic.(û¼†©8Å‹Å§„1
+java:S3740V"/Provide the parametrized type for this generic.(û¼†©8‰ĞıÕ‰1
 L
-java:S3740:"/Provide the parametrized type for this generic.(ãõğ³8Å‹Å§„1
-p	java:S116"TRename this field "col_fecha" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇäÂ¤8Ò‹Å§„1
-m	java:S116"QRename this field "col_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ ¾î8Ò‹Å§„1
-v	java:S116"URename this field "col_nombre" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§±‹úøÿÿÿÿ8Ò‹Å§„1
-t	java:S116"SRename this field "col_pais" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥Æâ™øÿÿÿÿ8Ò‹Å§„1
-q	java:S116 "URename this field "col_precio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã÷ô¼8Ò‹Å§„1
-r	java:S116)"VRename this field "btn_purchse" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“—¤¯8Ò‹Å§„1
+java:S3740W"/Provide the parametrized type for this generic.(ãõğ³8‰ĞıÕ‰1
+k
+java:S2095Å"HUse try-with-resources or close this "ProductDAO" in a "finally" clause.(ıçÚ´ÿÿÿÿÿ8ŸĞıÕ‰1
+k
+java:S2095—"HUse try-with-resources or close this "ProductDAO" in a "finally" clause.(ıçÚ´ÿÿÿÿÿ8å®ÿÕ‰1
+p	java:S116"TRename this field "col_fecha" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇäÂ¤8ŸĞıÕ‰1
+m	java:S116"QRename this field "col_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ ¾î8ŸĞıÕ‰1
+v	java:S116"URename this field "col_nombre" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§±‹úøÿÿÿÿ8ŸĞıÕ‰1
+t	java:S116""SRename this field "col_pais" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥Æâ™øÿÿÿÿ8ŸĞıÕ‰1
+q	java:S116%"URename this field "col_precio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã÷ô¼8ŸĞıÕ‰1
+r	java:S116."VRename this field "btn_purchse" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“—¤¯8ŸĞıÕ‰1
+t	java:S1164"SRename this field "Txtfecha" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø¨½¦ûÿÿÿÿ8ŸĞıÕ‰1
+q	java:S116:"PRename this field "Txtid" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–È‘¾ıÿÿÿÿ8ŸĞıÕ‰1
+p	java:S116="TRename this field "Txtnombre" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äíÊÀ8ŸĞıÕ‰1
+s	java:S116@"RRename this field "Txtpais" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ÌÔãúÿÿÿÿ8ŸĞıÕ‰1
+u	java:S116C"TRename this field "Txtprecio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©¨Àıüÿÿÿÿ8ŸĞıÕ‰1
+Y
+java:S1117";Rename "product" which hides the field declared at line 73.(¢¦Ì›8§ĞıÕ‰1
+a
+java:S1117—">Rename "productDAO" which hides the field declared at line 74.(ıçÚ´ÿÿÿÿÿ8¨ĞıÕ‰1
+a
+java:S1117Å">Rename "productDAO" which hides the field declared at line 74.(ıçÚ´ÿÿÿÿÿ8î®ÿÕ‰1

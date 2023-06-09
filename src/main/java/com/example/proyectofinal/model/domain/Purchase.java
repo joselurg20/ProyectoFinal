@@ -1,7 +1,15 @@
 package com.example.proyectofinal.model.domain;
 
+import com.example.proyectofinal.model.connection.ConnectionMySQL;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Purchase {
     private User u;
@@ -70,6 +78,8 @@ public class Purchase {
         return cantidad == other.cantidad && Objects.equals(fecha_compra, other.fecha_compra)
                 && Objects.equals(p, other.p) && Objects.equals(u, other.u);
     }
+
+
 
     @Override
     public String toString() {

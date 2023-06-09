@@ -9,33 +9,33 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #078C52;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.MercadoLibre">
+<AnchorPane prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #078C52;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.MercadoLibre">
    <children>
-      <Button fx:id="btn_home" layoutX="237.0" layoutY="351.0" mnemonicParsing="false" onAction="#setButton" prefHeight="36.0" prefWidth="126.0" style="-fx-background-color: #E5D3B4;" text="Log in" textFill="#0d4a11">
+      <Button fx:id="btn_home" layoutX="657.0" layoutY="658.0" mnemonicParsing="false" onAction="#setButton" prefHeight="36.0" prefWidth="126.0" style="-fx-background-color: #E5D3B4;" text="Log in" textFill="#0d4a11">
          <font>
             <Font size="16.0" />
          </font></Button>
-      <ImageView fitHeight="201.0" fitWidth="142.0" layoutX="229.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="366.0" fitWidth="308.0" layoutX="572.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imgs/mercado.png" />
          </image>
       </ImageView>
-      <PasswordField fx:id="passField" alignment="CENTER" layoutX="188.0" layoutY="276.0" prefHeight="46.0" prefWidth="272.0" promptText="Password">
+      <PasswordField fx:id="passField" alignment="CENTER" layoutX="622.0" layoutY="559.0" prefHeight="46.0" prefWidth="272.0" promptText="Password">
          <font>
             <Font size="21.0" />
          </font>
       </PasswordField>
-      <TextField fx:id="userField" alignment="CENTER" layoutX="188.0" layoutY="213.0" prefHeight="46.0" prefWidth="272.0" promptText="Username">
+      <TextField fx:id="userField" alignment="CENTER" layoutX="622.0" layoutY="456.0" prefHeight="46.0" prefWidth="272.0" promptText="Username">
          <font>
             <Font size="21.0" />
          </font>
       </TextField>
-      <ImageView fitHeight="46.0" fitWidth="182.0" layoutX="130.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="46.0" fitWidth="182.0" layoutX="553.0" layoutY="456.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imgs/456212.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="46.0" fitWidth="50.0" layoutX="130.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="46.0" fitWidth="50.0" layoutX="553.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imgs/61457.png" />
          </image>
