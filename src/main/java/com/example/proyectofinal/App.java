@@ -22,9 +22,10 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Crea una nueva escena con el contenido cargado desde el archivo FXML "mercadoLibre.fxml"
-        scene = new Scene(loadFXML("mercadoLibre"), 600, 500);
+        scene = new Scene(loadFXML("mercadoLibre"), 1440, 900);
         stage.setScene(scene); // Establece la escena en el Stage (ventana principal)
         stage.show(); // Muestra la ventana
+        stage.setResizable(false);
     }
 
     /**

@@ -32,7 +32,7 @@ public class MercadoLibre {
         if (userField.getText().equals("admin") && passField.getText().equals("admin")){
             labelUser.setText("Correct user and password!");
             labelUser.setTextFill(Color.GREEN);
-            App.setRoot("userview");
+            App.setRoot("windows");
         }else {
             labelUser.setText("Wrong username or password!");
             labelUser.setTextFill(Color.RED);

@@ -4,26 +4,91 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #078C52;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.controller.ProductController">
+<AnchorPane prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #078C52;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.controller.ProductController">
    <children>
-      <Label layoutX="211.0" layoutY="14.0" text="Lista de productos" textFill="#e5d3b4">
+      <Label layoutX="598.0" layoutY="93.0" text="Lista de productos" textFill="#e5d3b4">
          <font>
-            <Font size="22.0" />
+            <Font size="30.0" />
          </font>
       </Label>
-      <TableView fx:id="tableProducts" layoutX="14.0" layoutY="59.0" prefHeight="322.0" prefWidth="474.0" style="-fx-background-color: e5d3b4;">
+      <TableView fx:id="tableProducts" layoutX="92.0" layoutY="228.0" prefHeight="488.0" prefWidth="786.0" style="-fx-background-color: #e5d3b4;">
         <columns>
-          <TableColumn fx:id="col_id" prefWidth="43.0" text="Id" />
-          <TableColumn fx:id="col_nombre" prefWidth="104.0" text="Nombre" />
-            <TableColumn fx:id="col_pais" prefWidth="107.0" text="Pais de origen" />
-            <TableColumn fx:id="col_fecha" prefWidth="134.0" text="Fecha de caducidad" />
-            <TableColumn fx:id="col_precio" prefWidth="85.0" text="Precio" />
+          <TableColumn fx:id="col_id" prefWidth="107.0" text="Id" />
+          <TableColumn fx:id="col_nombre" minWidth="0.0" prefWidth="177.0" text="Nombre" />
+            <TableColumn fx:id="col_pais" prefWidth="181.0" text="Pais de origen" />
+            <TableColumn fx:id="col_fecha" prefWidth="199.0" text="Fecha de caducidad" />
+            <TableColumn fx:id="col_precio" prefWidth="121.0" text="Precio en euros" />
         </columns>
       </TableView>
-      <Button fx:id="back" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#setButton" style="-fx-background-color: #e5d3b4;" text="Volver" textFill="#078c52" />
-      <Button fx:id="btn_purchse" layoutX="511.0" layoutY="220.0" mnemonicParsing="false" onAction="#btnPurchase" text="Button" />
+      <Button fx:id="back" layoutX="92.0" layoutY="71.0" mnemonicParsing="false" onAction="#setButton" prefHeight="44.0" prefWidth="123.0" style="-fx-background-color: #e5d3b4;" text="Volver" textFill="#078c52">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button fx:id="btn_purchse" layoutX="1147.0" layoutY="731.0" mnemonicParsing="false" onAction="#btnPurchase" prefHeight="44.0" prefWidth="114.0" style="-fx-background-color: #e5d3b4;" text="Comprar" textFill="#078c52">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <GridPane layoutX="986.0" layoutY="228.0" prefHeight="332.0" prefWidth="249.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="id" />
+            <TextField fx:id="Txtnombre" promptText="Nombre" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="Txtpais" promptText="Pais de origen" GridPane.rowIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="Txtfecha" prefWidth="159.0" promptText="Fecha de caducidad" GridPane.rowIndex="3">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="Txtprecio" promptText="Precio" GridPane.rowIndex="4">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="Txtid" layoutX="10.0" layoutY="214.0" prefWidth="264.0" promptText="Id">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+         </children>
+      </GridPane>
+      <Button fx:id="guardar" layoutX="986.0" layoutY="619.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: #e5d3b4;" text="Guardar" textFill="#078c52">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="borrar" layoutX="1137.0" layoutY="619.0" mnemonicParsing="false" onAction="#delete" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #e5d3b4;" text="Borrar" textFill="#078c52">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="editar" layoutX="986.0" layoutY="687.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: #e5d3b4;" text="Editar" textFill="#078c52">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -3,16 +3,21 @@ package com.example.proyectofinal.controller;
 import com.example.proyectofinal.App;
 import com.example.proyectofinal.model.dao.ProductDAO;
 import com.example.proyectofinal.model.domain.Product;
+import com.example.proyectofinal.model.domain.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 public class ProductController {
@@ -40,6 +45,30 @@ public class ProductController {
     @FXML
     private Button btn_purchse;
 
+    @FXML
+    private Button borrar;
+
+    @FXML
+    private TextField Txtfecha;
+
+    @FXML
+    private Button guardar;
+
+    @FXML
+    private TextField Txtid;
+
+    @FXML
+    private TextField Txtnombre;
+
+    @FXML
+    private TextField Txtpais;
+
+    @FXML
+    private TextField Txtprecio;
+    @FXML
+    private Button editar;
+
+
 
     private ObservableList<Product> product;
     ProductDAO productDAO = new ProductDAO();
@@ -57,6 +86,12 @@ public class ProductController {
         this.col_fecha.setCellValueFactory(new PropertyValueFactory("fecha_caducidad"));
         this.col_precio.setCellValueFactory(new PropertyValueFactory("precio"));
         generateTable();
+
+        tableProducts.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                selectProduct();
+            }
+        });
     }
 
     /**
@@ -76,7 +111,7 @@ public class ProductController {
      */
     @FXML
     public void setButton() throws IOException {
-        App.setRoot("userview");
+        App.setRoot("windows");
     }
 
     /**
@@ -94,5 +129,106 @@ public class ProductController {
                 e.printStackTrace();
             }
         }
+    }
+
+    @FXML
+    void save (ActionEvent event)  {
+            int id = Integer.parseInt(Txtid.getText());
+            String nombre = Txtnombre.getText();
+            String pais = Txtpais.getText();
+            LocalDate fecha = LocalDate.parse(Txtfecha.getText());
+            double precio = Double.parseDouble(Txtprecio.getText());
+
+            Product product = new Product();
+            product.setId(id);
+            product.setNombre(nombre);
+            product.setPais_origen(pais);
+            product.setFecha_caducidad(fecha);
+            product.setPrecio(precio);
+            clear();
+
+            try {
+                ProductDAO productDAO = new ProductDAO();
+                productDAO.save(product);
+                generateTable();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+    }
+    @FXML
+    void delete(ActionEvent event) {
+        // Obtener el producto seleccionado en la tabla
+        Product selectedProduct = tableProducts.getSelectionModel().getSelectedItem();
+
+        if (selectedProduct != null) {
+            try {
+                // Eliminar el producto de la base de datos
+                productDAO.delete(selectedProduct);
+
+                // Eliminar el producto de la lista observable y actualizar la tabla
+                product.remove(selectedProduct);
+                tableProducts.refresh();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    @FXML
+    void update(ActionEvent event) {
+        Product selectedProduct = tableProducts.getSelectionModel().getSelectedItem();
+
+        if (selectedProduct != null) {
+            // Obtener los nuevos valores de los campos de texto
+            int id = Integer.parseInt(Txtid.getText());
+            String nombre = Txtnombre.getText();
+            String pais = Txtpais.getText();
+            LocalDate fecha = LocalDate.parse(Txtfecha.getText());
+            double precio = Double.parseDouble(Txtprecio.getText());
+
+            // Actualizar los valores del producto seleccionado
+            selectedProduct.setId(id);
+            selectedProduct.setNombre(nombre);
+            selectedProduct.setPais_origen(pais);
+            selectedProduct.setFecha_caducidad(fecha);
+            selectedProduct.setPrecio(precio);
+
+            try {
+                // Actualizar el producto en la base de datos
+                ProductDAO productDAO = new ProductDAO();
+                productDAO.update(selectedProduct);
+
+                // Actualizar la tabla
+                tableProducts.refresh();
+                clear();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @FXML
+    void selectProduct() {
+        // Obtener el producto seleccionado en la tabla
+        Product selectedProduct = tableProducts.getSelectionModel().getSelectedItem();
+
+        if (selectedProduct != null) {
+            // Rellenar los campos de texto con los datos del producto seleccionado
+            Txtid.setText(String.valueOf(selectedProduct.getId()));
+            Txtnombre.setText(selectedProduct.getNombre());
+            Txtpais.setText(selectedProduct.getPais_origen());
+            Txtfecha.setText(selectedProduct.getFecha_caducidad().toString());
+            Txtprecio.setText(String.valueOf(selectedProduct.getPrecio()));
+        }
+    }
+
+
+    @FXML
+    void clear() {
+        Txtid.clear();
+        Txtnombre.clear();
+        Txtpais.clear();
+        Txtfecha.clear();
+        Txtprecio.clear();
+        tableProducts.getSelectionModel().clearSelection();
     }
 }

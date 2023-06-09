@@ -1,7 +1,9 @@
 package com.example.proyectofinal.controller;
 
 import com.example.proyectofinal.App;
+import com.example.proyectofinal.model.dao.ProductDAO;
 import com.example.proyectofinal.model.dao.UserDAO;
+import com.example.proyectofinal.model.domain.Product;
 import com.example.proyectofinal.model.domain.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,6 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class UserController {
@@ -45,6 +48,12 @@ public class UserController {
 
     @FXML
     private TextField txtSecondName;
+
+    @FXML
+    private Button editar;
+
+    @FXML
+    private  Button back;
     @FXML
     private ObservableList<User> user;
     UserDAO userDAO = new UserDAO();
@@ -58,6 +67,12 @@ public class UserController {
 
         generateTable();
 
+        llistUsers.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                selectUser();
+            }
+        });
+
     }
     @FXML
     public void generateTable() throws SQLException{
@@ -66,41 +81,31 @@ public class UserController {
         this.llistUsers.setItems(user);
     }
     @FXML
+    public void setButton() throws IOException {
+        App.setRoot("windows");
+    }
+
+    @FXML
     void save(ActionEvent event) {
-        // Obtener los valores de los campos de texto
         String dni = txtDni.getText();
         String nombre = txtName.getText();
         String apellido = txtSecondName.getText();
 
+        User user = new User();
+        user.setDni(dni);
+        user.setNombre(nombre);
+        user.setApellido(apellido);
+        clearFields();
+
         try {
-            if (!userDAO.existsUser(dni)) {
-                // El usuario no existe en la base de datos, crear uno nuevo
-                User newUser = new User(dni, nombre, apellido);
-                // Guardar el nuevo usuario en la base de datos
-                userDAO.save(newUser);
-
-                // Agregar el nuevo usuario a la lista observable
-                user.add(newUser);
-            } else {
-                // El usuario ya existe en la base de datos, actualizar nombre y apellido
-                User existingUser = userDAO.findById(dni);
-                existingUser.setNombre(nombre);
-                existingUser.setApellido(apellido);
-                // Actualizar el usuario en la base de datos
-                userDAO.save(existingUser);
-            }
-
-            // Limpiar los campos de texto
-            txtDni.clear();
-            txtName.clear();
-            txtSecondName.clear();
-
+            UserDAO userDAO = new UserDAO();
+            userDAO.save(user);
             generateTable();
         } catch (SQLException e) {
             e.printStackTrace();
-            // Manejar el error de la consulta SQL
         }
     }
+
     @FXML
     void delete(ActionEvent event) {
         User selectedUser = llistUsers.getSelectionModel().getSelectedItem();
@@ -116,56 +121,61 @@ public class UserController {
             }
         }
     }
+
     @FXML
-   void selectUsers(ActionEvent event){
-       User selectedUser = llistUsers.getSelectionModel().getSelectedItem();
+    void update(ActionEvent event) {
+        User selectedUser = llistUsers.getSelectionModel().getSelectedItem();
+        if (selectedUser != null) {
+            String dni = txtDni.getText();
+            String nombre = txtName.getText();
+            String apellido = txtSecondName.getText();
+
+            // Actualizar los datos del usuario seleccionado
+            selectedUser.setDni(dni);
+            selectedUser.setNombre(nombre);
+            selectedUser.setApellido(apellido);
+
+            try {
+                UserDAO userDAO = new UserDAO();
+                userDAO.update(selectedUser); // Actualizar en la base de datos
+                generateTable(); // Actualizar la tabla
+                clearFields(); // Limpiar los campos de texto
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    @FXML
+    void selectUsers(ActionEvent event){
+        User selectedUser = llistUsers.getSelectionModel().getSelectedItem();
         if (selectedUser != null){
             try {
-                App.setRoot("listProduct");
+                App.setRoot("viewPurchase");
             } catch (IOException e){
                 e.printStackTrace();
             }
         }
-   }
-
-    @FXML
-    void validateDNI(ActionEvent event) {
-        String dni = txtDni.getText();
-
-        // Verifica si el DNI es válido utilizando el método validarDNI
-        if (validarDNI(dni)) {
-            // El DNI es válido
-            // Realiza las acciones necesarias aquí
-            System.out.println("El DNI es válido.");
-        } else {
-            // El DNI no es válido
-            // Muestra un mensaje de error o realiza alguna acción adecuada
-            System.out.println("El DNI no es válido.");
-        }
     }
 
-    private boolean validarDNI(String dni) {
-        // Expresión regular para verificar el formato del DNI
-        String regex = "\\d{8}[A-HJ-NP-TV-Z]";
+    @FXML
+    void selectUser(){
+        User selectedItem = llistUsers.getSelectionModel().getSelectedItem();
 
-        if (dni.matches(regex)) {
-            // Obtiene los dígitos del número de DNI
-            String digitos = dni.substring(0, 8);
-            // Obtiene el dígito verificador
-            char verificador = dni.charAt(8);
+        if (selectedItem != null) {
+            // Rellenar los campos de texto con los datos del producto seleccionado
+            txtDni.setText(selectedItem.getDni());
+            txtName.setText(selectedItem.getNombre());
+            txtSecondName.setText(selectedItem.getApellido());
 
-            // Calcula el dígito verificador esperado
-            String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
-            int posicion = Integer.parseInt(digitos) % 23;
-            char verificadorEsperado = letras.charAt(posicion);
-
-            // Compara el dígito verificador ingresado con el esperado
-            if (verificador == verificadorEsperado) {
-                return true; // El DNI es válido
-            }
         }
 
-        return false; // El DNI no es válido
+    }
+
+    private void clearFields() {
+        txtDni.clear();
+        txtName.clear();
+        txtSecondName.clear();
+
     }
 
 

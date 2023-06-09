@@ -15,7 +15,10 @@ import java.util.List;
 public class ProductDAO implements DAO<Product> {
     private final static String FINDALL = "select * from producto";
     private final static String FINDBYID = "select * from producto where id_producto = ?";
-    private final static String INSERT = "insert into producto (id_producto, nombre, pais_origen, fecha_caducidad, precio) values (?,?,?, ?)";
+    private final static String INSERT = "insert into producto (id_producto, nombre, pais_origen, fecha_caducidad, precio) values (?,?,?,?,?)";
+    private final static String UPDATE= "update producto set nombre = ?, pais_origen = ?,fecha_caducidad = ?,precio = ?  where id_producto= ?" ;
+    private final static String DELETE = "delete from producto where id_producto = ?" ;
+
 
     private Connection conn;
 
@@ -80,14 +83,39 @@ public class ProductDAO implements DAO<Product> {
 
     @Override
     public Product save(Product entity) throws SQLException {
-        // Método no implementado en el código proporcionado
-        return null;
+        try (PreparedStatement pst = this.conn.prepareStatement(INSERT)) {
+            pst.setInt(1, entity.getId());
+            pst.setString(2, entity.getNombre());
+            pst.setString(3, entity.getPais_origen());
+            pst.setDate(4, java.sql.Date.valueOf(entity.getFecha_caducidad()));
+            pst.setDouble(5, entity.getPrecio());
+            pst.executeUpdate();
+        }
+        return entity;
     }
+
+    public void update(Product entity) throws SQLException {
+        try (PreparedStatement pst = this.conn.prepareStatement(UPDATE)) {
+            pst.setString(1, entity.getNombre());
+            pst.setString(2, entity.getPais_origen());
+            pst.setDate(3, java.sql.Date.valueOf(entity.getFecha_caducidad()));
+            pst.setDouble(4, entity.getPrecio());
+            pst.setInt(5, entity.getId());
+            pst.executeUpdate();
+        }
+    }
+
+
 
     @Override
     public void delete(Product entity) throws SQLException {
         // Método no implementado en el código proporcionado
+        try (PreparedStatement pst = this.conn.prepareStatement(DELETE)) {
+            pst.setInt(1, entity.getId()); // Suponiendo que el objeto User tiene un método getDni() que devuelve el DNI del usuario
+            pst.executeUpdate();
+        }
     }
+
 
 
     @Override
