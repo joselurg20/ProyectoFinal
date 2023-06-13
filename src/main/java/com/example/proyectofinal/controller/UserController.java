@@ -9,10 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
@@ -40,6 +37,7 @@ public class UserController {
     @FXML
     private TableView<User> llistUsers;
 
+
     @FXML
     private TextField txtDni;
 
@@ -54,6 +52,7 @@ public class UserController {
 
     @FXML
     private  Button back;
+
     @FXML
     private ObservableList<User> user;
     UserDAO userDAO = new UserDAO();
@@ -146,12 +145,15 @@ public class UserController {
         }
     }
     @FXML
-    void selectUsers(ActionEvent event){
+    void selectUsers(ActionEvent event) {
         User selectedUser = llistUsers.getSelectionModel().getSelectedItem();
-        if (selectedUser != null){
+        if (selectedUser != null) {
             try {
+                // Mostrar mensaje de selección
+                System.out.println("Usuario seleccionado: " + selectedUser.getNombre());
+                // Pasar el usuario seleccionado a la vista de compras
                 App.setRoot("viewPurchase");
-            } catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

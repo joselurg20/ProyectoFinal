@@ -1,25 +1,9 @@
 
-q
-Asrc/main/java/com/example/proyectofinal/model/domain/Product.java,b\5\b54f248a0add8f02bf0ab801c4751ee15a69b949
 r
 Bsrc/main/java/com/example/proyectofinal/model/domain/Purchase.java,6\2\624306d2f3b72864c28258e644fd954a7cd1146c
-i
-9src/main/java/com/example/proyectofinal/MercadoLibre.java,6\9\69136c2153692a30216107ee95f71fb53b3c35d7
 n
 >src/main/java/com/example/proyectofinal/model/domain/User.java,b\5\b589230955b9cd5fdce04d527fa0e7bf1419979a
-z
-Jsrc/main/java/com/example/proyectofinal/controller/PurchaseController.java,e\a\ea159831a413253c9978373aec7661aca3685342
-r
-Bsrc/main/java/com/example/proyectofinal/model/dao/PurchaseDAO.java,6\d\6d704dfe5b051b43f9a1ab1abfbb7cd43ad92eef
-o
-?src/main/java/com/example/proyectofinal/controller/Windows.java,1\1\11d02d364a0ac6a6d77bded1dfbc68e9d40c91bd
 n
 >src/main/java/com/example/proyectofinal/model/dao/UserDAO.java,7\1\7138380658481d9df7a4ca566ec6b3957827da64
 q
-Asrc/main/java/com/example/proyectofinal/model/dao/ProductDAO.java,0\d\0d733e0f176e3bfb9f92ca65b61ed2bd986a5d30
-y
-Isrc/main/java/com/example/proyectofinal/controller/ProductController.java,f\4\f453f5465f93bbc3d5f2a4abbc3077d39b5f8c7d
-v
-Fsrc/main/java/com/example/proyectofinal/controller/UserController.java,5\2\52acfc8d320082265e9f3b12e966264d0c53f8aa
-`
-0src/main/java/com/example/proyectofinal/App.java,4\d\4d976d2380863669d0f78eac28f7a07ec710d93d
+Asrc/main/java/com/example/proyectofinal/model/domain/Product.java,b\5\b54f248a0add8f02bf0ab801c4751ee15a69b949

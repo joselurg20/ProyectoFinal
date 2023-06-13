@@ -1,5 +1,6 @@
 package com.example.proyectofinal.controller;
 
+import com.example.proyectofinal.App;
 import com.example.proyectofinal.model.dao.ProductDAO;
 import com.example.proyectofinal.model.dao.PurchaseDAO;
 import com.example.proyectofinal.model.dao.UserDAO;
@@ -13,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
@@ -37,11 +39,14 @@ public class PurchaseController {
     private ComboBox<User> chooser;
     @FXML
     private ComboBox<Product> chspro;
-
+    @FXML
+    private Button back;
     @FXML
     private Button save;
     @FXML
     private Button delete;
+    @FXML
+    private Label lb_nombre;
     @FXML
     private Spinner<Integer> cant;
     private ObservableList<Purchase> purchase  = FXCollections.observableArrayList();
@@ -86,6 +91,10 @@ public class PurchaseController {
         this.ta_Purchase.setItems(purchase);
     }
 
+    @FXML
+    public void setButton() throws IOException {
+        App.setRoot("userview");
+    }
 
     /**
      * boton o accion para el boton que guarda y mete al compra
@@ -139,6 +148,11 @@ public class PurchaseController {
         }
     }
 
+
+
+    public void setSelectedUser(User user) {
+        chooser.setValue(user);
+    }
 
 
 

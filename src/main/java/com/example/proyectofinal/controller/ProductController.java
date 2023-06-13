@@ -8,13 +8,20 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Date;
@@ -66,11 +73,13 @@ public class ProductController {
     @FXML
     private TextField Txtprecio;
     @FXML
+    private TextField txtFitrarnombre;
+    @FXML
     private Button editar;
 
-
-
     private ObservableList<Product> product;
+    @FXML
+    private ObservableList<Product> filtroProduct = FXCollections.observableArrayList();
     ProductDAO productDAO = new ProductDAO();
 
 
@@ -120,16 +129,25 @@ public class ProductController {
      * @throws IOException Si ocurre un error durante la redirección a la vista "viewPurchase".
      */
     @FXML
-    public void btnPurchase() throws IOException {
-        Product selectedUser = tableProducts.getSelectionModel().getSelectedItem();
-        if (selectedUser != null) {
+    public void btnPurchase() {
+        Product selectedProduct = tableProducts.getSelectionModel().getSelectedItem();
+        if (selectedProduct != null) {
             try {
-                App.setRoot("viewPurchase");
+                String rutaFXML = getClass().getResource("/com/example/proyectofinal/consulta.fxml").toExternalForm();
+                FXMLLoader loader = new FXMLLoader(new URL(rutaFXML));
+                Parent root = loader.load();
+                Consulta consulta = loader.getController();
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setScene(scene);
+                stage.showAndWait();
             } catch (IOException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
     }
+
 
     @FXML
     void save (ActionEvent event)  {
@@ -218,6 +236,21 @@ public class ProductController {
             Txtpais.setText(selectedProduct.getPais_origen());
             Txtfecha.setText(selectedProduct.getFecha_caducidad().toString());
             Txtprecio.setText(String.valueOf(selectedProduct.getPrecio()));
+        }
+    }
+    @FXML
+    private void filtrarNombre (KeyEvent event){
+        String filtroNombre = this.txtFitrarnombre.getText();
+        if (filtroNombre.isEmpty()){
+            this.tableProducts.setItems(product);
+        }else{
+            this.filtroProduct.clear();
+            for (Product p : this.product) {
+                if (p.getNombre().toLowerCase().contains(filtroNombre.toLowerCase())) {
+                    this.filtroProduct.add(p);
+                }
+            }
+            this.tableProducts.setItems(filtroProduct);
         }
     }
 

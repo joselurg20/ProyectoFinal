@@ -27,11 +27,11 @@
             <TableColumn fx:id="col_precio" prefWidth="121.0" text="Precio en euros" />
         </columns>
       </TableView>
-      <Button fx:id="back" layoutX="92.0" layoutY="71.0" mnemonicParsing="false" onAction="#setButton" prefHeight="44.0" prefWidth="123.0" style="-fx-background-color: #e5d3b4;" text="Volver" textFill="#078c52">
+      <Button fx:id="back" layoutX="92.0" layoutY="71.0" mnemonicParsing="false" onAction="#setButton" prefHeight="44.0" prefWidth="123.0" style="-fx-background-color: #e5d3b4;" text="Volver" textFill="#0d4a11">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button fx:id="btn_purchse" layoutX="1147.0" layoutY="731.0" mnemonicParsing="false" onAction="#btnPurchase" prefHeight="44.0" prefWidth="114.0" style="-fx-background-color: #e5d3b4;" text="Comprar" textFill="#078c52">
+      <Button fx:id="btn_purchse" layoutX="1103.0" layoutY="731.0" mnemonicParsing="false" onAction="#btnPurchase" prefHeight="44.0" prefWidth="158.0" style="-fx-background-color: #e5d3b4;" text="Hacer consulta" textFill="#0d4a11">
          <font>
             <Font size="20.0" />
          </font></Button>
@@ -75,20 +75,26 @@
             </TextField>
          </children>
       </GridPane>
-      <Button fx:id="guardar" layoutX="986.0" layoutY="619.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: #e5d3b4;" text="Guardar" textFill="#078c52">
+      <Button fx:id="guardar" layoutX="986.0" layoutY="619.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: #e5d3b4;" text="Guardar" textFill="#0d4a11">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="borrar" layoutX="1137.0" layoutY="619.0" mnemonicParsing="false" onAction="#delete" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #e5d3b4;" text="Borrar" textFill="#078c52">
+      <Button fx:id="borrar" layoutX="1137.0" layoutY="619.0" mnemonicParsing="false" onAction="#delete" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #e5d3b4;" text="Borrar" textFill="#0d4a11">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="editar" layoutX="986.0" layoutY="687.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: #e5d3b4;" text="Editar" textFill="#078c52">
+      <Button fx:id="editar" layoutX="986.0" layoutY="687.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: #e5d3b4;" text="Editar" textFill="#0d4a11">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
+      <Label layoutX="93.0" layoutY="187.0" prefHeight="27.0" prefWidth="138.0" text="Filtar productos:" textFill="#e5d3b4">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtFitrarnombre" layoutX="238.0" layoutY="189.0" onKeyReleased="#filtrarNombre" />
    </children>
 </AnchorPane>
