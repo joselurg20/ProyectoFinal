@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="709.0" prefWidth="1100.0" style="-fx-background-color: #078C52;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.controller.Consulta">
+   <children>
+      <TableView fx:id="ta_Purchase" layoutX="64.0" layoutY="100.0" prefHeight="530.0" prefWidth="717.0">
+        <columns>
+          <TableColumn fx:id="col_dni" prefWidth="156.0" text="Dni" />
+          <TableColumn fx:id="col_pro" prefWidth="192.0" text="Producto" />
+            <TableColumn fx:id="col_cant" minWidth="0.0" prefWidth="177.0" text="Cantdad" />
+            <TableColumn fx:id="col_fecha" prefWidth="225.0" text="Fecha" />
+        </columns>
+      </TableView>
+      <TextField fx:id="buscador" layoutX="826.0" layoutY="220.0" onKeyReleased="#filtrarNombre" prefHeight="35.0" prefWidth="189.0" />
+      <Label layoutX="826.0" layoutY="167.0" text="Buscador" textFill="#e5d3b4">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="324.0" layoutY="33.0" text="Filtrador de Productos comprados" textFill="#e5d3b4">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

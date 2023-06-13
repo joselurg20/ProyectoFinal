@@ -13,9 +13,9 @@
 
 <AnchorPane prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #078C52;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectofinal.controller.UserController">
    <children>
-      <Label layoutX="560.0" layoutY="107.0" prefHeight="59.0" prefWidth="320.0" text="Lista de personas" textFill="#e5d3b4">
+      <Label layoutX="566.0" layoutY="107.0" prefHeight="59.0" prefWidth="309.0" text="Lista de personas" textFill="#e5d3b4">
          <font>
-            <Font size="41.0" />
+            <Font size="40.0" />
          </font>
       </Label>
       <GridPane layoutX="845.0" layoutY="200.0" prefHeight="250.0" prefWidth="320.0">

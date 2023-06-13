@@ -15,13 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PurchaseDAO implements DAO<Purchase> {
-    private final static String FINDALL = "select * from carrito";
+    private final static String FINDALL = "select * from carrito order by fecha_compra ";
 
-    private final static String INSERT = "INSERT INTO carrito (dni_usuario, id_producto, cantidad, fecha_compra) VALUES (?, ?, ?, ?)";
-    private final static String JOIN ="select u.nombre, p.nombre, c.cantidad, c.fecha_compra " +
-            "from usuario u " +
-            "join carrito c on u.dni = c.dni_usuario " +
-            "join producto p on p.id_producto = c.id_producto;";
+    private final static String INSERT = "INSERT INTO carrito (dni_usuario, id_producto, cantidad, fecha_compra) VALUES (?, ?, ?, ?) ";
+    private final static String SHOW = "SELECT u.nombre, u.Apellido, p.nombre as Producto, c.cantidad FROM carrito c JOIN usuario u ON u.dni = c.dni_usuario JOIN producto p ON c.id_producto = p.id_producto WHERE p.nombre = '?' ";
     private Connection conn;
     public PurchaseDAO(Connection conn){
         this.conn = conn;
@@ -95,6 +92,13 @@ public class PurchaseDAO implements DAO<Purchase> {
                 pst.setInt(2, entity.getP().getId());  // Assuming 'getIdProducto()' returns the product's id
                 pst.executeUpdate();
             }
+        }
+
+        public void show (Purchase entity) throws SQLException{
+            try (PreparedStatement pst = this.conn.prepareStatement(SHOW)) {
+                pst.setString(1,entity.getP().getNombre());
+            }
+
         }
 
 
