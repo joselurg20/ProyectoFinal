@@ -3,18 +3,20 @@ package com.example.proyectofinal.controller;
 import com.example.proyectofinal.App;
 import com.example.proyectofinal.model.dao.ProductDAO;
 import com.example.proyectofinal.model.dao.UserDAO;
-import com.example.proyectofinal.model.domain.Product;
 import com.example.proyectofinal.model.domain.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.List;
 
 public class UserController {
@@ -23,20 +25,21 @@ public class UserController {
 
     @FXML
     private Button btn_save;
+
     @FXML
     private Button btn_compra;
-    @FXML
-    private TableColumn columSecondName;
 
     @FXML
-    private TableColumn columnDni;
+    private TableColumn<User, String> columnDni;
 
     @FXML
-    private TableColumn columnName;
+    private TableColumn<User, String> columnName;
+
+    @FXML
+    private TableColumn<User, String> columSecondName;
 
     @FXML
     private TableView<User> llistUsers;
-
 
     @FXML
     private TextField txtDni;
@@ -51,18 +54,20 @@ public class UserController {
     private Button editar;
 
     @FXML
-    private  Button back;
+    private Button back;
 
-    @FXML
-    private ObservableList<User> user;
-    UserDAO userDAO = new UserDAO();
+    private ObservableList<User> users;
+    private UserDAO userDAO;
 
-    public void initialize() throws SQLException{
+    private User selectedUser;
 
-        user = FXCollections.observableArrayList();
-        this.columnDni.setCellValueFactory(new PropertyValueFactory("Dni"));
-        this.columnName.setCellValueFactory(new PropertyValueFactory("nombre"));
-        this.columSecondName.setCellValueFactory(new PropertyValueFactory("Apellido"));
+    public void initialize() throws SQLException {
+        userDAO = new UserDAO();
+        users = FXCollections.observableArrayList();
+
+        columnDni.setCellValueFactory(new PropertyValueFactory<>("dni"));
+        columnName.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        columSecondName.setCellValueFactory(new PropertyValueFactory<>("apellido"));
 
         generateTable();
 
@@ -71,14 +76,15 @@ public class UserController {
                 selectUser();
             }
         });
+    }
 
-    }
     @FXML
-    public void generateTable() throws SQLException{
+    public void generateTable() throws SQLException {
         List<User> aux = userDAO.findAll();
-        user.setAll(aux);
-        this.llistUsers.setItems(user);
+        users.setAll(aux);
+        llistUsers.setItems(users);
     }
+
     @FXML
     public void setButton() throws IOException {
         App.setRoot("windows");
@@ -97,7 +103,6 @@ public class UserController {
         clearFields();
 
         try {
-            UserDAO userDAO = new UserDAO();
             userDAO.save(user);
             generateTable();
         } catch (SQLException e) {
@@ -110,13 +115,10 @@ public class UserController {
         User selectedUser = llistUsers.getSelectionModel().getSelectedItem();
         if (selectedUser != null) {
             try {
-                // Eliminar el usuario de la base de datos
                 userDAO.delete(selectedUser);
-                // Eliminar el usuario de la lista observable
-                user.remove(selectedUser);
+                users.remove(selectedUser);
             } catch (SQLException e) {
                 e.printStackTrace();
-                // Manejar el error de la consulta SQL
             }
         }
     }
@@ -129,58 +131,59 @@ public class UserController {
             String nombre = txtName.getText();
             String apellido = txtSecondName.getText();
 
-            // Actualizar los datos del usuario seleccionado
             selectedUser.setDni(dni);
             selectedUser.setNombre(nombre);
             selectedUser.setApellido(apellido);
 
             try {
-                UserDAO userDAO = new UserDAO();
-                userDAO.update(selectedUser); // Actualizar en la base de datos
-                generateTable(); // Actualizar la tabla
-                clearFields(); // Limpiar los campos de texto
+                userDAO.update(selectedUser);
+                generateTable();
+                clearFields();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
     }
-    @FXML
+
+   @FXML
     void selectUsers(ActionEvent event) {
-        User selectedUser = llistUsers.getSelectionModel().getSelectedItem();
+        selectedUser = llistUsers.getSelectionModel().getSelectedItem();
         if (selectedUser != null) {
             try {
-                // Mostrar mensaje de selección
-                System.out.println("Usuario seleccionado: " + selectedUser.getNombre());
-                // Pasar el usuario seleccionado a la vista de compras
-                App.setRoot("viewPurchase");
+                // Cargar el archivo FXML de la vista de compra
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/proyectofinal/viewPurchase.fxml"));
+
+                // Cargar el nodo raíz y obtener el controlador de la vista de compra
+                Parent root = fxmlLoader.load();
+                PurchaseController purchaseController = fxmlLoader.getController();
+
+                // Pasar el usuario seleccionado al controlador de la vista de compra
+                purchaseController.setSelectedUser(selectedUser);
+
+                // Crear una nueva ventana (Stage) y establecer la escena con el nodo raíz
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    @FXML
-    void selectUser(){
-        User selectedItem = llistUsers.getSelectionModel().getSelectedItem();
 
+    @FXML
+    void selectUser() {
+        User selectedItem = llistUsers.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
-            // Rellenar los campos de texto con los datos del producto seleccionado
             txtDni.setText(selectedItem.getDni());
             txtName.setText(selectedItem.getNombre());
             txtSecondName.setText(selectedItem.getApellido());
-
         }
-
     }
 
     private void clearFields() {
         txtDni.clear();
         txtName.clear();
         txtSecondName.clear();
-
     }
-
-
-
-
 }

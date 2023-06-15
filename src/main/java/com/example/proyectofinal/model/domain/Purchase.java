@@ -1,16 +1,8 @@
 package com.example.proyectofinal.model.domain;
-
-import com.example.proyectofinal.model.connection.ConnectionMySQL;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Objects;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class Purchase {
     private User u;
     private Product p;
@@ -26,10 +18,6 @@ public class Purchase {
     public Purchase(){
         this(null, null, 0, null);
     }
-
-
-
-
     public User getU() {
         return u;
     }
@@ -64,7 +52,7 @@ public class Purchase {
 
     @Override
     public int hashCode() {
-        return Objects.hash(cantidad, fecha_compra, p, u);
+        return Objects.hash(cantidad, fecha_compra,p, u);
     }
     @Override
     public boolean equals(Object obj) {
@@ -78,7 +66,6 @@ public class Purchase {
         return cantidad == other.cantidad && Objects.equals(fecha_compra, other.fecha_compra)
                 && Objects.equals(p, other.p) && Objects.equals(u, other.u);
     }
-
 
 
     @Override

@@ -1,0 +1,51 @@
+
+h	java:S112’"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8åˆš©‹1
+L
+java:S3740 "/Provide the parametrized type for this generic.(ÇäÂ¤8¦çŒ©‹1
+L
+java:S3740#"/Provide the parametrized type for this generic.(¸ ¾î8¦çŒ©‹1
+Q
+java:S3740&"/Provide the parametrized type for this generic.(§±‹úøÿÿÿÿ8¦çŒ©‹1
+Q
+java:S3740)"/Provide the parametrized type for this generic.(¥Æâ™øÿÿÿÿ8¦çŒ©‹1
+L
+java:S3740,"/Provide the parametrized type for this generic.(Ã÷ô¼8¦çŒ©‹1
+Q
+java:S3740\"/Provide the parametrized type for this generic.(²ÊÇ£üÿÿÿÿ8¦çŒ©‹1
+Q
+java:S3740]"/Provide the parametrized type for this generic.(Ú÷Ğ¤úÿÿÿÿ8¦çŒ©‹1
+Q
+java:S3740^"/Provide the parametrized type for this generic.(ü¡£Éùÿÿÿÿ8¦çŒ©‹1
+L
+java:S3740_"/Provide the parametrized type for this generic.(û¼†©8¦çŒ©‹1
+L
+java:S3740`"/Provide the parametrized type for this generic.(ãõğ³8¦çŒ©‹1
+k
+java:S2095×"HUse try-with-resources or close this "ProductDAO" in a "finally" clause.(ıçÚ´ÿÿÿÿÿ8¹çŒ©‹1
+k
+java:S2095©"HUse try-with-resources or close this "ProductDAO" in a "finally" clause.(ıçÚ´ÿÿÿÿÿ8¹çŒ©‹1
+p	java:S116 "TRename this field "col_fecha" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇäÂ¤8ºçŒ©‹1
+m	java:S116#"QRename this field "col_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ ¾î8ºçŒ©‹1
+v	java:S116&"URename this field "col_nombre" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§±‹úøÿÿÿÿ8ºçŒ©‹1
+t	java:S116)"SRename this field "col_pais" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥Æâ™øÿÿÿÿ8ºçŒ©‹1
+q	java:S116,"URename this field "col_precio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã÷ô¼8ºçŒ©‹1
+r	java:S1165"VRename this field "btn_purchse" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“—¤¯8ºçŒ©‹1
+t	java:S116;"SRename this field "Txtfecha" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø¨½¦ûÿÿÿÿ8ºçŒ©‹1
+q	java:S116A"PRename this field "Txtid" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–È‘¾ıÿÿÿÿ8ºçŒ©‹1
+p	java:S116D"TRename this field "Txtnombre" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äíÊÀ8ºçŒ©‹1
+s	java:S116G"RRename this field "Txtpais" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ÌÔãúÿÿÿÿ8ºçŒ©‹1
+u	java:S116J"TRename this field "Txtprecio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©¨Àıüÿÿÿÿ8ºçŒ©‹1
+_
+java:S1854‹"<Remove this useless assignment to local variable "consulta".(ÈÜÌşÿÿÿÿ8ıˆš©‹1
+P
+java:S1481‹"-Remove this unused "consulta" local variable.(ÈÜÌşÿÿÿÿ8€‰š©‹1
+Y
+java:S1117 ";Rename "product" which hides the field declared at line 80.(¢¦Ì›8ÄçŒ©‹1
+a
+java:S1117©">Rename "productDAO" which hides the field declared at line 83.(ıçÚ´ÿÿÿÿÿ8ÅçŒ©‹1
+a
+java:S1117×">Rename "productDAO" which hides the field declared at line 83.(ıçÚ´ÿÿÿÿÿ8ÇçŒ©‹1
+j
+java:S1128"HRemove this unused import 'com.example.proyectofinal.model.domain.User'.(Á«€ ûÿÿÿÿ8Ğº©‹1
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8Ñº©‹1

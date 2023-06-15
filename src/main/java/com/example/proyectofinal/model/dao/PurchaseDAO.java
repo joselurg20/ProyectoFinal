@@ -16,7 +16,6 @@ import java.util.List;
 
 public class PurchaseDAO implements DAO<Purchase> {
     private final static String FINDALL = "select * from carrito order by fecha_compra ";
-
     private final static String INSERT = "INSERT INTO carrito (dni_usuario, id_producto, cantidad, fecha_compra) VALUES (?, ?, ?, ?) ";
     private final static String SHOW = "SELECT u.nombre, u.Apellido, p.nombre as Producto, c.cantidad FROM carrito c JOIN usuario u ON u.dni = c.dni_usuario JOIN producto p ON c.id_producto = p.id_producto WHERE p.nombre = '?' ";
     private Connection conn;

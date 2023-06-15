@@ -17,6 +17,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 public class PurchaseController {
@@ -46,17 +48,16 @@ public class PurchaseController {
     @FXML
     private Button delete;
     @FXML
-    private Label lb_nombre;
-    @FXML
     private Spinner<Integer> cant;
-    private ObservableList<Purchase> purchase  = FXCollections.observableArrayList();
+    @FXML
+    private Label selectedUserLabel; // Nuevo Label para mostrar el usuario seleccionado
+    private ObservableList<Purchase> purchase = FXCollections.observableArrayList();
 
     PurchaseDAO purchaseDAO = new PurchaseDAO();
     /**
      * El initialize para poder pillar la base de datos
      * @throws SQLException
      */
-
     public void initialize() throws SQLException {
         purchase = FXCollections.observableArrayList();
         this.col_dni.setCellValueFactory(new PropertyValueFactory("u"));
@@ -68,21 +69,21 @@ public class PurchaseController {
         List<User> usuarios = userDAO.findAll();
         chooser.setItems(FXCollections.observableArrayList(usuarios));
 
+        // Deshabilitar la interacción con el ComboBox de usuarios
+        chooser.setDisable(true);
+        
         ProductDAO productDAO = new ProductDAO();
         List<Product> products = productDAO.findAll();
         chspro.setItems(FXCollections.observableArrayList(products));
 
-
-        SpinnerValueFactory<Integer> valueFactory =
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10);
-
+        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10);
         valueFactory.setValue(1);
         cant.setValueFactory(valueFactory);
-
-
     }
+
     /**
-     * te muestra el Array de comprar de la base de datos
+     * Te muestra el Array de compras de la base de datos
+     *
      * @throws SQLException
      */
     private void generateTable() throws SQLException {
@@ -97,10 +98,10 @@ public class PurchaseController {
     }
 
     /**
-     * boton o accion para el boton que guarda y mete al compra
+     * Botón o acción para el botón que guarda y mete al compra
+     *
      * @param event
      */
-
     @FXML
     void save(ActionEvent event) {
         Product productoSeleccionado = chspro.getValue();
@@ -131,7 +132,6 @@ public class PurchaseController {
         }
     }
 
-
     @FXML
     void delete(ActionEvent event) {
         Purchase selectedPurchase = ta_Purchase.getSelectionModel().getSelectedItem();
@@ -148,13 +148,8 @@ public class PurchaseController {
         }
     }
 
-
-
     public void setSelectedUser(User user) {
         chooser.setValue(user);
+        selectedUserLabel.setText(user.getNombre() + " " + user.getApellido()); // Actualiza el texto del Label con el nombre del usuario seleccionado
     }
-
-
-
-
 }
