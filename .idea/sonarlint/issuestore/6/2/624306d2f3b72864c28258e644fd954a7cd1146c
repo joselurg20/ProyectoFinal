@@ -1,20 +1,0 @@
-
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ŠÛÉ8“ïÒ‰1
-r	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­‹ˆÚşÿÿÿÿ8“ïÒ‰1
-s	java:S116"WRename this field "fecha_compra" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É˜Ù8šïÒ‰1
-o	java:S1009"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯¹ÙÃûÿÿÿÿ8ïÒ‰1
-o	java:S100="NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­‹ˆÚşÿÿÿÿ8ïÒ‰1
-s
-java:S1128"WRemove this unused import 'com.example.proyectofinal.model.connection.ConnectionMySQL'.(Œ8Ş²Ö‰1
-Z
-java:S1128"=Remove this unused import 'javafx.collections.FXCollections'.(´¶²Æ8Ş²Ö‰1
-`
-java:S1128">Remove this unused import 'javafx.collections.ObservableList'.(ÄÜ€éüÿÿÿÿ8Ş²Ö‰1
-K
-java:S1128"/Remove this unused import 'java.sql.ResultSet'.(ˆóÚw8Ş²Ö‰1
-O
-java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8Ş²Ö‰1
-Q
-java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8Ş²Ö‰1
-R
-java:S1128"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš8Ş²Ö‰1

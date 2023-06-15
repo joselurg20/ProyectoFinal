@@ -1,0 +1,30 @@
+
+Q
+java:S3740"/Provide the parametrized type for this generic.(÷æ”¦ıÿÿÿÿ8ŒÏ¨‹1
+Q
+java:S3740"/Provide the parametrized type for this generic.(ªŞÂëüÿÿÿÿ8Ï¨‹1
+L
+java:S3740"/Provide the parametrized type for this generic.(ÇäÂ¤8Ï¨‹1
+Q
+java:S3740!"/Provide the parametrized type for this generic.(õ×‹¶ùÿÿÿÿ8Ï¨‹1
+Q
+java:S37402"/Provide the parametrized type for this generic.(£ÌÚúÿÿÿÿ8Ï¨‹1
+Q
+java:S37403"/Provide the parametrized type for this generic.(Í±ÁŠıÿÿÿÿ8Ï¨‹1
+L
+java:S37404"/Provide the parametrized type for this generic.(‹™8Ï¨‹1
+Q
+java:S37405"/Provide the parametrized type for this generic.(–ÇÛÏúÿÿÿÿ8Ï¨‹1
+t	java:S116"SRename this field "col_cant" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷æ”¦ıÿÿÿÿ8™Ï¨‹1
+s	java:S116"RRename this field "col_dni" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªŞÂëüÿÿÿÿ8™Ï¨‹1
+p	java:S116"TRename this field "col_fecha" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇäÂ¤8™Ï¨‹1
+s	java:S116!"RRename this field "col_pro" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õ×‹¶ùÿÿÿÿ8™Ï¨‹1
+r	java:S116$"VRename this field "ta_Purchase" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùßû½8™Ï¨‹1
+m
+java:S1128"KRemove this unused import 'com.example.proyectofinal.model.dao.ProductDAO'.(Ÿğ³ïıÿÿÿÿ8–¨‹1
+e
+java:S1128"HRemove this unused import 'com.example.proyectofinal.model.dao.UserDAO'.(ÑˆÉØ8–¨‹1
+g
+java:S1128"KRemove this unused import 'com.example.proyectofinal.model.domain.Product'.(Àµ‘"8–¨‹1
+j
+java:S1128"HRemove this unused import 'com.example.proyectofinal.model.domain.User'.(Á«€ ûÿÿÿÿ8–¨‹1
